@@ -19,13 +19,13 @@ const HomePage = () => {
   return (
     <div className="home-page">
       <ul className="header">
-        <li>
+        <li className="search">
           <form className="d-flex" role="search">
             <input className="form-control fst-italic me-2" type="search" placeholder="Search" aria-label="Search"/>          
             {/* <i className="fa-solid fa-magnifying-glass"></i> */}
           </form>
         </li>
-        {/* <li>
+        <li className="icon-item">
           {data.map((item, index) => (
             <li key={index} className="nav-bar-item">
               <Link to={item.path} className="nav-bar-link">
@@ -35,8 +35,8 @@ const HomePage = () => {
           ))}
           </li>
           <li>
-            <img src={img2} alt="ảnh đại diện" /> 
-        </li> */}
+            {/* <img src={img2} alt="ảnh đại diện" />  */}
+        </li>
       </ul>
       <div className="chart">
         <h1>Thống kê</h1>

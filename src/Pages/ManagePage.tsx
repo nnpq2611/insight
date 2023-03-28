@@ -5,7 +5,7 @@ const ManagePage = () => {
   return (
     <div className="magage-page">
         <ul className="header">
-            <li>
+            <li className='search'>
                 <form className="d-flex" role="search">
                     <input className="form-control fst-italic me-2" type="search" placeholder="Search" aria-label="Search"/>          
                     {/* <i className="fa-solid fa-magnifying-glass"></i> */}
