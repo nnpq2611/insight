@@ -8,10 +8,6 @@ const AreaChart = () => {
       name: "series1",
       data: [160, 240, 200, 260, 300, 280, 300],
     },
-    // {
-    //   name: "series2",
-    //   data: [11, 32, 45, 32, 34, 52, 41],
-    // },
   ];
   const options: ApexOptions = {
     chart: {

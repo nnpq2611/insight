@@ -2,7 +2,7 @@ import React from "react";
 import AreaChart from "../module/home/AreaChart";
 import PieChart from "../module/home/PieChart";
 import "./HomePage.css";
-import img2 from "../assets/image/Group 3.png";
+// import img2 from "../assets/image/Group 3.png";
 import { Link } from "react-router-dom";
 
 const HomePage = () => {
@@ -22,7 +22,6 @@ const HomePage = () => {
         <li className="search">
           <form className="d-flex" role="search">
             <input className="form-control fst-italic me-2" type="search" placeholder="Search" aria-label="Search"/>          
-            {/* <i className="fa-solid fa-magnifying-glass"></i> */}
           </form>
         </li>
         <li className="icon-item">
@@ -35,7 +34,7 @@ const HomePage = () => {
           ))}
           </li>
           <li>
-            {/* <img src={img2} alt="ảnh đại diện" />  */}
+            <img src="" alt="ảnh đại diện" />  
         </li>
       </ul>
       <div className="chart">

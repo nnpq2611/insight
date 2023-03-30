@@ -4,7 +4,7 @@
     box-shadow: 0 1px 0 rgba(0,0,0,.05);
     position: fixed;
     top: 0;
-    width: 19%;
+    width: 1%;
     height: 100%;
     z-index: 1030;
 }
@@ -15,8 +15,8 @@
     justify-content: space-between;
     list-style: none;
     margin: 0;
-    padding-left: 33px;
-    width: 252px;
+    padding-left: 100%;
+    width: 200px;
 }
 
 .nav-bar .nav-bar-list .nav-bar-item{
@@ -29,8 +29,6 @@
 
 .nav-bar .nav-bar-list .nav-bar-item .nav-bar-link{
     display: block;
-    font-size: 14px;
-    font-weight: bold;
     height: 100%;
     line-height: 50px;
     text-decoration: none;
@@ -38,11 +36,9 @@
     Font-weight: 100;
     Font-style: Medium;
     Font-size: 14px;
-    color: #1E0D03;  
-    Width: 240px;
-    border-radius: 10px;
-    
-    
+    color: #1E0D03;
+    Width: 200px;
+    border-radius: 15px;
 }
 
 .nav-bar .nav-bar-list .nav-bar-item .nav-bar-link:hover{
@@ -50,11 +46,17 @@
     color: #fff;
 }
 
+.active{
+    background-color: #FFB800;
+    color: #fff !important;
+}
+
 .nav-bar img{
     padding-left: 33px;
-    padding-top: 17px;
-    padding-bottom: 40px;
-    padding-right: 155px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    padding-right: 80px;
+    width: 100px;
 }
 
 
@@ -66,6 +68,18 @@
 
 .nav-bar .nav-bar-list .nav-bar-item span{
     padding-left: 60px;
+    font-weight: bold;
 }
 
+.nav-bar .nav-bar-list .nav-bar-item .nav-data{
+    padding-left: 60px;
+    font-weight: bold;
+    font-size: 14px;
+    padding-left: 70px;
+}
+
+/* .nav-bar .nav-bar-list .nav-bar-item .nav-data:hover{
+    background-color: #FFB800;
+    color: #fff;
+} */
 

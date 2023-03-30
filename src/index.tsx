@@ -6,6 +6,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import "react-datepicker/dist/react-datepicker.css";
+
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);

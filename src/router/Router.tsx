@@ -2,13 +2,14 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "../Pages/HomePage";
 import ManagePage from "../Pages/ManagePage";
+import TicketCheckPage from "../Pages/TicketCheckPage";
 
 const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/" element={<ManagePage />} />
-      
+      <Route path="/about" element={<ManagePage />} />
+      <Route path="/" element={<TicketCheckPage/>} />
     </Routes>
   );
 };
