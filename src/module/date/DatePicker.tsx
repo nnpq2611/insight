@@ -1,15 +1,18 @@
-import React, {useState} from 'react';
+import React from 'react';
+import { DatePicker, Space } from 'antd';
+import type { DatePickerProps } from 'antd';
+import './DatePicker.css';
 
-const DatePicker = () => {
-    const [startDate, setStartDate] = useState(new Date());
+const onChange: DatePickerProps['onChange'] = (date, dateString) => {
+    console.log(date, dateString);
+};
+
+const DatePickerCustom = () => {
     return (
-        <DatePicker
-            // showIcon
-            // selected={startDate}
-            // onChange={(date) => setStartDate(date)}
-        />
-        
+        <Space direction="vertical" className='date'>
+            <DatePicker onChange={onChange} />
+        </Space>
     );
 }
 
-export default DatePicker
+export default DatePickerCustom;

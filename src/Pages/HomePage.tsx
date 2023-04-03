@@ -2,46 +2,25 @@ import React from "react";
 import AreaChart from "../module/home/AreaChart";
 import PieChart from "../module/home/PieChart";
 import "./HomePage.css";
-// import img2 from "../assets/image/Group 3.png";
-import { Link } from "react-router-dom";
+import Header from "../components/header/Header";
+import DatePickerCustom from "../module/date/DatePicker";
 
 const HomePage = () => {
-  const data = [
-    {
-      icon: "fa-regular fa-envelope",
-      path: "/",
-    },
-    {
-      icon: "fa-regular fa-bell",
-      path: "/",
-    },
-  ];
+
   return (
     <div className="home-page">
-      <ul className="header">
-        <li className="search">
-          <form className="d-flex" role="search">
-            <input className="form-control fst-italic me-2" type="search" placeholder="Search" aria-label="Search"/>          
-          </form>
-        </li>
-        <li className="icon-item">
-          {data.map((item, index) => (
-            <li key={index} className="nav-bar-item">
-              <Link to={item.path} className="nav-bar-link">
-                <i className={item.icon}></i>
-              </Link>
-            </li>
-          ))}
-          </li>
-          <li>
-            <img src="" alt="ảnh đại diện" />  
-        </li>
-      </ul>
+      <div className="header">
+        <Header/>
+      </div>
       <div className="chart">
-        <h1>Thống kê</h1>
-        <h5>Doanh thu</h5>
-        <AreaChart />
-        <PieChart />
+        <ul>
+          <li> <h1>Thống kê</h1> </li>
+          <li> <h5>Doanh thu</h5> </li>
+          <li> <DatePickerCustom/> </li>
+          <li> <AreaChart /> </li>
+          <li> <PieChart /> </li>        
+        </ul>
+        
       </div>
     </div>
   );

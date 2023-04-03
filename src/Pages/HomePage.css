@@ -1,12 +1,25 @@
 .home-page {
     justify-content: space-between;
     list-style: none;
-    margin: 0;
-    margin: horizontal;
-    Width: 100%;   
+    margin-left: 20px;
+    Width: 80%;   
     padding-left: 15%;
     padding-top: 17px; 
     background-color: #f6f5f5;
+}
+
+.home-page ul{
+    list-style-type: none;
+    padding: 0;
+    display: block; 
+}
+
+.home-page li::before{
+    content: none;
+}
+
+.home-page li{
+    list-style-type: none;
 }
 
 .header {
@@ -20,72 +33,13 @@
     padding-top: 17px; 
 }
 
-.home-page .form-control {
-    list-style-type: none;
-    width: 320px;
-    height: 100%;
-    font-style: italic;
-    border: 1px solid#EDE6E6;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-    padding: 7px 20px 7px 20px;
-    border-radius: 8px;
-    background-color: #EDE6E6;
-    background-image: url("../assets/icon/magnifying-glass-solid.svg");   
-    background-size: 15px;
-    background-position: calc(100% - 20px) center;
-    background-repeat: no-repeat;
-}
-
-
-
-
-.home-page ul{
-    list-style-type: none;
-    padding: 0;
-    display: block; 
-}
-
-.home-page li::before{
-    content: none;
-}
-
-.home-page .nav-bar-item i{
-    color: #1E0D03;  
-}
-
-
 .chart{
     border-radius: 20px;
     height: 100%;
     background-color: #ffff;
     padding: 7px 20px 7px 20px;
+    margin-top: 70px;
+    margin-left: 10px;
+    width: 100%;
 }
 
-/* .header .search {
-    Width: 50%;   
-    padding-top: 17px; 
-    padding: 10px;
-    border: 1px solid black;
-}
-
-.header .icon-item{  
-    Width: 10%; 
-    padding-top: 17px; 
-    padding: 10px;
-    border: 1px solid black;
-    list-style: none;
-} */
-
-.home-page .search .df{
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    margin: 0;
-    margin: horizontal;
-    Width: 100%;   
-}
-    

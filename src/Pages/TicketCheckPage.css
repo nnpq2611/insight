@@ -1,9 +1,8 @@
-.tickercheck-page{
+.tickercheck-page {
     justify-content: space-between;
     list-style: none;
-    margin: 0;
-    margin: horizontal;
-    Width: 100%;   
+    margin-left: 20px;
+    Width: 80%;   
     padding-left: 15%;
     padding-top: 17px; 
     background-color: #f6f5f5;
@@ -18,11 +17,21 @@
     Width: 100%;   
     padding-left: 15%;
     padding-top: 17px; 
+    padding-bottom: 17px;
 }
 
-.tickercheck-page {
+.table-page{
+    border-radius: 20px;
+    height: 100%;
+    background-color: #ffff;
+    padding: 7px 20px 7px 20px;
+    margin-top: 70px;
+    margin-left: 10px;
+}
+
+.tickercheck-page .table-page .form-control {
     list-style-type: none;
-    width: 18%;
+    width: 320px;
     height: 100%;
     font-style: italic;
     border: 1px solid#EDE6E6;
@@ -31,35 +40,13 @@
     margin-top: 6px;
     margin-bottom: 16px;
     resize: vertical;
-    padding: 7px 0 7px 10px;
+    padding: 7px 20px 7px 20px;
     border-radius: 8px;
     background-color: #EDE6E6;
-    background-image: url("http://www.w3.org/2000/svg");    
-}
-
-.tickercheck-page{
-    list-style-type: none;
-    padding: 0;
-    display: block; 
-}
-
-.tickercheck-page li::before{
-    content: none;
-}
-
-.tickercheck-page .nav-bar-item i{
-    color: #1E0D03;  
-}
-
-.tickercheck-page .search .dflex{
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    margin: 0;
-    margin: horizontal;
-    Width: 100%;   
-    padding-left: 15%;
-    padding-top: 17px; 
+    background-image: url("../assets/icon/magnifying-glass-solid.svg");   
+    background-size: 15px;
+    background-position: calc(100% - 20px) center;
+    background-repeat: no-repeat;    
 }
 
 .table{
@@ -77,5 +64,10 @@
 .table th{
     background-color: #F1F4F8;
     color: black;
+}
+
+.header li{
+    display: inline-block;
+    padding: 0 10px;
 }
     

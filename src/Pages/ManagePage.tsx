@@ -1,48 +1,53 @@
 import React from 'react'
 import './ManagePage.css'
 import { Link } from "react-router-dom";
+import Header from "../components/header/Header";
+import data from "../assets/data/danhsachve.json"
+import Table from '../components/table/Table'
+import { Button } from 'antd';
 
+const ticket_list = [
+    'STT',
+    'Booking code',
+    'Số vé',
+    'Tình trạng sử dụng',
+    'Ngày sử dụng',
+    'Ngày xuất vé',
+    'Cổng Check-in'
+]
+
+// const renderHead = (item, index) => <th key={index}>{item}</th>
+
+// const renderBody = (item, index) => (
+//     <tr key={index}>
+//         <td>{item.id}</td>
+//         <td>{item.Booking_Code}</td>
+//         <td>{item.So_ve}</td>
+//         <td>{item.Tinh_trang_su_dung}</td>
+//         <td>{item.Ngay_su_dung}</td>
+//         <td>{item.Ngay_xuat_ve}</td>
+//         <td>{item.Cong_check_in}</td>
+//     </tr>
+// )
 
 const ManagePage = () => {
-    const data = [
-        {
-          icon: "fa-regular fa-envelope",
-          path: "/",
-        },
-        {
-          icon: "fa-regular fa-bell",
-          path: "/",
-        },
-    ];
     return (
         <div className="magage-page">
-            <div>
-                <ul className="header">
-                    <li className="search">
-                        <form className="d-flex" role="search">
-                            <input className="form-control fst-italic me-2" type="search" placeholder="Search" aria-label="Search"/>          
-                        </form>
-                    </li>
-                    <li className="icon-item">
-                        {data.map((item, index) => (
-                            <li key={index} className="nav-bar-item">
-                                <Link to={item.path} className="nav-bar-link">
-                                    <i className={item.icon}></i>
-                                </Link>
-                            </li>
-                        ))}
-                    </li>
-                    <li>
-                        <img src="" alt="ảnh đại diện" />  
-                    </li>
-                </ul>
+            <div className="header">
+                <Header/>
             </div>
-            <div className="chart">
+            <div className="table-page">
                 <h1>Danh sách vé</h1>
                 <li className="search">
-                    <form className="d-flex" role="search">
-                        <input className="form-control fst-italic me-2" type="search" placeholder="Tìm bằng số vé" aria-label="Search"/>          
-                    </form>
+                    <input className="form-control fst-italic me-2" type="search" placeholder="Tìm bằng số vé" aria-label="Search"/>          
+                    
+                </li>
+                <li className="ticket_filter">
+                    <i className="fa-solid fa-filter"></i>
+                    <span>Lọc vé</span>
+                </li>
+                <li className="export_file">
+                    <span>Xuất file (.csv)</span>
                 </li>
                 <table className="table">
                     <thead>
@@ -175,8 +180,22 @@ const ManagePage = () => {
                     </thead>
                 </table>
                 
+                {/* <div className="row">
+                    <div className="col-12">
+                        <div className="card">
+                            <div className="card__body">
+                                <Table
+                                    limit='10'
+                                    headData={ticket_list}
+                                    renderHead={(item, index) => renderHead(item, index)}
+                                    bodyData={customerList}
+                                    renderBody={(item, index) => renderBody(item, index)}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div> */}
             </div>
-
         </div>
     )
 }
