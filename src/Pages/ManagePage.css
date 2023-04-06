@@ -66,9 +66,18 @@
     color: black;
 }
 
-.header li{
+.table-page ul{
+    list-style-type: none;
+    padding: 0;
+    display: block;
+    
+}
+
+.table-page ul li{
     display: inline-block;
-    padding: 0 10px;
+    padding: center;
+    margin: 10px 10px;
+    
 }
 
 .table-page .ticket_filter{
@@ -77,7 +86,8 @@
     border-radius: 4px;
     width: 90px;
     height: 30px;
-    padding: 5px 5px 0 10px;
+    padding: 5px 5px 0 20px;
+    margin-left: 530px;
 }
     
 .table-page .ticket_filter:hover{
@@ -93,7 +103,7 @@
     border-radius: 4px;
     width: 110px;
     height: 30px;
-    padding: 5px 5px 0 10px;
+    padding: 5px 5px 0 20px;
 
 }
     
@@ -102,3 +112,6 @@
     background-color: #FF993C;
 }
 
+.header .icon{
+    margin-left: 700px;
+}

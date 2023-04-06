@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 
-import './table.css'
+import './Table.css'
+
 
 // const Table = props => {
 

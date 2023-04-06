@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import './ManagePage.css'
 import { Link } from "react-router-dom";
 import Header from "../components/header/Header";
-import data from "../assets/data/danhsachve.json"
-import Table from '../components/table/Table'
-import { Button } from 'antd';
+import danhsachve from "../assets/data/danhsachve.json"
+import Table_List from '../components/table/Table'
+import { Button, Table } from 'antd';
+
 
 const ticket_list = [
     'STT',
@@ -16,7 +17,10 @@ const ticket_list = [
     'Cổng Check-in'
 ]
 
-// const renderHead = (item, index) => <th key={index}>{item}</th>
+
+// const renderHead = (item, index) => (
+//     <th key={index}>{item}</th>
+// )
 
 // const renderBody = (item, index) => (
 //     <tr key={index}>
@@ -38,17 +42,19 @@ const ManagePage = () => {
             </div>
             <div className="table-page">
                 <h1>Danh sách vé</h1>
-                <li className="search">
-                    <input className="form-control fst-italic me-2" type="search" placeholder="Tìm bằng số vé" aria-label="Search"/>          
-                    
-                </li>
-                <li className="ticket_filter">
-                    <i className="fa-solid fa-filter"></i>
-                    <span>Lọc vé</span>
-                </li>
-                <li className="export_file">
-                    <span>Xuất file (.csv)</span>
-                </li>
+                <ul>
+                    <li className="search">
+                        <input className="form-control fst-italic me-2" type="search" placeholder="Tìm bằng số vé" aria-label="Search"/>          
+                        
+                    </li>
+                    <li className="ticket_filter">
+                        <i className="fa-solid fa-filter"></i>
+                        <span>Lọc vé</span>
+                    </li>
+                    <li className="export_file">
+                        <span>Xuất file (.csv)</span>
+                    </li>
+                </ul>
                 <table className="table">
                     <thead>
                         <tr>
@@ -150,33 +156,7 @@ const ManagePage = () => {
                             <td className="table-col" scope="col">12/12/2021</td>
                             <td className="table-col" scope="col">-</td>
                         </tr>
-                        <tr>
-                            <td className="table-col" scope="col">11</td>
-                            <td className="table-col" scope="col">ALTFGHJL</td>
-                            <td className="table-col" scope="col">123456789102</td>
-                            <td className="table-col" scope="col">Chưa sử dụng</td>
-                            <td className="table-col" scope="col">12/12/2021</td>
-                            <td className="table-col" scope="col">12/12/2021</td>
-                            <td className="table-col" scope="col">-</td>
-                        </tr>
-                        <tr>
-                            <td className="table-col" scope="col">12</td>
-                            <td className="table-col" scope="col">ALTFGHJL</td>
-                            <td className="table-col" scope="col">123456789102</td>
-                            <td className="table-col" scope="col">Chưa sử dụng</td>
-                            <td className="table-col" scope="col">12/12/2021</td>
-                            <td className="table-col" scope="col">12/12/2021</td>
-                            <td className="table-col" scope="col">-</td>
-                        </tr>
-                        <tr>
-                            <td className="table-col" scope="col">13</td>
-                            <td className="table-col" scope="col">ALTFGHJL</td>
-                            <td className="table-col" scope="col">123456789102</td>
-                            <td className="table-col" scope="col">Chưa sử dụng</td>
-                            <td className="table-col" scope="col">12/12/2021</td>
-                            <td className="table-col" scope="col">12/12/2021</td>
-                            <td className="table-col" scope="col">-</td>
-                        </tr>
+                        
                     </thead>
                 </table>
                 
@@ -188,7 +168,7 @@ const ManagePage = () => {
                                     limit='10'
                                     headData={ticket_list}
                                     renderHead={(item, index) => renderHead(item, index)}
-                                    bodyData={customerList}
+                                    bodyData={danhsachve}
                                     renderBody={(item, index) => renderBody(item, index)}
                                 />
                             </div>

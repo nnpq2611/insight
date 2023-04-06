@@ -11,7 +11,7 @@ const Header = () => {
         },
         {
             icon: "fa-regular fa-bell",
-            path: "/",
+            path: "/a",
         },
     ];
     return (
@@ -19,15 +19,17 @@ const Header = () => {
             <li className="search">
                 <input className="form-control fst-italic me-2" type="search" placeholder="Search" aria-label="Search" />
             </li>
-            {data.map((item, index) => (
-                <li key={index} className="nav-bar-item">
-                    <Link to={item.path} className="nav-bar-link">
-                        <i className={item.icon}></i>
-                    </Link>
+            <li className='icon'>
+                {data.map((item, index) => (
+                    <li key={index} className="nav-bar-item">
+                        <Link to={item.path} className="nav-bar-link">
+                            <i className={item.icon}></i>
+                        </Link>
+                    </li>
+                ))}
+                <li>
+                    <img src={img2} alt="ảnh đại diện" />
                 </li>
-            ))}
-            <li>
-                <img src={img2} alt="ảnh đại diện" />
             </li>
         </ul>
     )
