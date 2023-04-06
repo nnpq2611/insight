@@ -48,6 +48,10 @@
     margin: 0;
     
 }
+
+.header .icon{
+    margin-left: 60%;
+}
     
 .header img{
     width: 25px;
