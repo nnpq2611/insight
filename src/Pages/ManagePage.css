@@ -2,25 +2,12 @@
     justify-content: space-between;
     list-style: none;
     margin-left: 20px;
-    Width: 80%;   
     padding-left: 15%;
-    padding-top: 17px; 
+    padding-top: 17px;
     background-color: #f6f5f5;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    margin: 0;
-    margin: horizontal;
-    Width: 100%;   
-    padding-left: 15%;
-    padding-top: 17px; 
-    padding-bottom: 17px;
-}
-
-.table-page{
+.table-page {
     border-radius: 20px;
     height: 100%;
     background-color: #ffff;
@@ -29,7 +16,7 @@
     margin-left: 10px;
 }
 
-.magage-page .table-page .form-control{
+.magage-page .table-page .form-control {
     list-style-type: none;
     width: 320px;
     height: 30px;
@@ -43,43 +30,45 @@
     border-radius: 8px;
 }
 
-.bang{
+.bang {
     border-radius: 20px;
 }
 
-.table{
+.table {
     border-collapse: collapse;
     width: 100%;
 }
 
-.table td .table th{
+.table td .table th {
     text-align: left;
     padding: 8px;
 }
 
-.table tr:nth-child(odd){background-color: #F7F8FB;}
+.table tr:nth-child(odd) {
+    background-color: #F7F8FB;
+}
 
-.table th{
+.table th {
     background-color: #F1F4F8;
     color: black;
 }
 
-.table-page ul{
+.table-page ul {
     list-style-type: none;
     padding: 0;
     display: block;
-    
+
 }
 
-.table-page ul li{
+.table-page ul li {
     display: inline-block;
     padding: center;
     margin: 10px 10px;
-    
+
 }
 
-.table-page .ticket_filter{
-    color: #FF993C; 
+.table-page .ticket_filter {
+    color: #FF993C;
     border: 1px solid #FF993C;
     border-radius: 4px;
     width: 90px;
@@ -87,16 +76,16 @@
     padding: 5px 5px 0 20px;
     margin-left: 530px;
 }
-    
-.table-page .ticket_filter:hover{
+
+.table-page .ticket_filter:hover {
     color: #fff;
     background-color: #FF993C;
 }
 
-.table-page .export_file{
+.table-page .export_file {
     margin-top: 10px;
     margin-bottom: 10px;
-    color: #FF993C; 
+    color: #FF993C;
     border: 1px solid #FF993C;
     border-radius: 4px;
     width: 110px;
@@ -104,38 +93,45 @@
     padding: 5px 5px 0 20px;
 
 }
-    
-.table-page .export_file:hover{
+
+.table-page .export_file:hover {
     color: #fff;
     background-color: #FF993C;
 }
 
-.table-page .pagination{
+.table-page .pagination {
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
 }
 
-.header li{
+.header li {
     display: inline-block;
     padding: 0 10px;
 }
 
-.table-page .tab-list {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    margin: horizontal;
-    Width: 100%; 
-    
+.table-page .ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #FF993C !important;
+    font-weight: 500;
 }
 
-.table-page .nav-link {
-    margin-right: 30px;
+.table-page .ant-tabs-ink-bar{
+    background-color: #FF993C;
+}
+
+.table-page .ant-tabs-tab:hover {
     color: #FF993C;
+    font-weight: 500;
 }
 
+.table-page .ant-tabs-tab-btn:active:active {
+    color: #FF993C;
+    font-weight: 500;
+}
 
-
+.table-page .ant-tabs-tab {
+    color: #b1b1b1;
+    font-size: 14px;
+}
 

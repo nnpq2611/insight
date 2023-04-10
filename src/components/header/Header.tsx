@@ -19,10 +19,9 @@ const Header = () => {
     return (
         <ul className="header">
             <li className="search">
-                {/* <input className="form-control fst-italic me-2" type="search" placeholder="Search" aria-label="Search" /> */}
                 <Input className="form-control" placeholder="Search" suffix={<SearchOutlined />} />
             </li>
-            <li className='icon'>
+            <div className='icon'>
                 {data.map((item, index) => (
                     <li key={index} className="nav-bar-item">
                         <Link to={item.path} className="nav-bar-link">
@@ -33,7 +32,7 @@ const Header = () => {
                 <li>
                     <img src={img2} alt="ảnh đại diện" />
                 </li>
-            </li>
+            </div>
         </ul>
     )
 }

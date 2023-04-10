@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom'
 import './TicketCheckPage.css'
-import Header from "../components/header/Header";
-import data from "../assets/data/danhsachve.json";
-import { Input, Pagination } from "antd";
+import { SearchOutlined } from '@ant-design/icons';
+import Navbar from "react-bootstrap/Nav";
+
+import { Input } from "antd";
 
 const manage_list = [
     "STT",
@@ -28,21 +29,37 @@ const manage_list = [
   );
 
 const TicketCheckPage = () => {
-    
+    const [packed, setPacked] = useState(true);
+    const handleChangePacked = () => {
+        setPacked(!packed);
+    };
     return (
         <div className="tickercheck-page">
-            <div className="header">
-                <Header/>
-            </div>
             <div className="table-page">
                 <h1>Đối soát vé</h1>
-                <li className="search">
-                    <input className="form-control fst-italic me-2" type="search" placeholder="Tìm bằng số vé" aria-label="Search"/>          
+                <ul>
+                    <div className="tab-list">
+                        <Navbar  defaultActiveKey="/">
+                        <Navbar.Link onClick={handleChangePacked} active={packed}>
+                        Gói gia đình
+                        </Navbar.Link>
+                        <Navbar.Link onClick={handleChangePacked} active={!packed}>
+                            Gói sự kiện
+                        </Navbar.Link>
+                        </Navbar>
+                    </div>
                     
-                </li>
-                
-
-                
+                    <li className="search">
+                        <Input className="form-control" placeholder="Tìm bằng số vé" suffix={<SearchOutlined />} />
+                    </li>
+                    {/* <li className="ticket_filter">
+                        <i className="fa-solid fa-filter"></i>
+                        <span>Lọc vé</span>
+                    </li>
+                    <li className="export_file">
+                        <span>Xuất file (.csv)</span>
+                    </li> */}
+                </ul>
             </div>
                 
         </div>

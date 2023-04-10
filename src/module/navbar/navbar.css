@@ -28,7 +28,7 @@
     justify-content: center;
     padding: 10 15 10 0;
     list-style-type: none;
-    margin: 0;
+    margin-top: 5px;
 }
 
 .nav-bar .nav-bar-list .nav-bar-item .nav-bar-link{

@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import { SearchOutlined } from '@ant-design/icons';
-import {  ref, get } from "firebase/database";
+import { SearchOutlined } from "@ant-design/icons";
 import "./ManagePage.css";
-import Navbar from "react-bootstrap/Nav";
-import Header from "../components/header/Header";
-import { Input } from "antd";
+import { Input, Tabs } from "antd";
+import type { TabsProps } from "antd";
 import Family from "../components/ticket/family/Family";
 import Event from "../components/ticket/event/Event";
 
@@ -13,27 +11,39 @@ const ManagePage = (item: any, index: any) => {
   const handleChangePacked = () => {
     setPacked(!packed);
   };
+  const items: TabsProps["items"] = [
+    {
+      key: "1",
+      label: `Gói gia đình`,
+    },
+    {
+      key: "2",
+      label: `Gói sự kiện`,
+    },
+  ];
   return (
     <div className="magage-page">
-      <div className="header">
-        <Header />
-      </div>
       <div className="table-page">
         <h1>Danh sách vé</h1>
         <ul>
           <div className="tab-list">
-            <Navbar  defaultActiveKey="/">
-              <Navbar.Link onClick={handleChangePacked} active={packed}>
-              Gói gia đình
-              </Navbar.Link>
-              <Navbar.Link onClick={handleChangePacked} active={!packed}>
-                Gói sự kiện
-              </Navbar.Link>
-            </Navbar>
+            {/* <Tabs defaultActiveKey="1" onChange={handleChangePacked} className="tab-custom">
+              <Tabs.TabPane tab="Gói gia đình" key="1" />
+              <Tabs.TabPane tab="Gói sự kiện" key="2" />
+            </Tabs> */}
+            <Tabs
+              defaultActiveKey="1"
+              onChange={handleChangePacked}
+              items={items}
+            />
           </div>
-          
+
           <li className="search">
-            <Input className="form-control" placeholder="Tìm bằng số vé" suffix={<SearchOutlined />} />
+            <Input
+              className="form-control"
+              placeholder="Tìm bằng số vé"
+              suffix={<SearchOutlined />}
+            />
           </li>
           <li className="ticket_filter">
             <i className="fa-solid fa-filter"></i>
@@ -43,12 +53,9 @@ const ManagePage = (item: any, index: any) => {
             <span>Xuất file (.csv)</span>
           </li>
         </ul>
-        
-      {packed ? <Family /> : <Event />}
-      
-        
-        
+        {packed ? <Family /> : <Event />}
       </div>
+      
     </div>
   );
 };
@@ -57,4 +64,3 @@ export default ManagePage;
 function setPacked(arg0: boolean) {
   throw new Error("Function not implemented.");
 }
-

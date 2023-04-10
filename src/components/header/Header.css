@@ -9,10 +9,14 @@
     float: right;
 }
 
+.header .search{
+    margin-left: 17%;
+}
+
 .header .form-control {
     list-style-type: none;
-    width: 320px;
-    height: 30px;
+    width: 350px;
+    height: 40px;
     font-style: italic;
     border: 1px solid#EDE6E6;
     border-radius: 4px;
@@ -22,7 +26,6 @@
     resize: vertical;
     padding: 7px 20px 7px 20px;
     border-radius: 8px;
-    
 }
 
 .header ul{
@@ -31,29 +34,20 @@
     display: block; 
 }
 
-.header li::before{
-    content: none;
-}
 
 .header .nav-bar-item i{
-    color: #1E0D03;  
-}
-
-.header .search .form-control{
-    justify-content: space-between;
-    margin: 0;
-    
+    color: #1E0D03; 
+    font-size: 20px; 
 }
 
 .header .icon{
-    margin-left: 60%;
+    display: flex;
+    align-items: center;
 }
     
 .header img{
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
     border-radius: 50%;
-    margin-right: 10px;
-    float: left;
-
 }
