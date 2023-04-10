@@ -1,5 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -10,8 +12,11 @@ const firebaseConfig = {
   projectId: "insight-b62b1",
   storageBucket: "insight-b62b1.appspot.com",
   messagingSenderId: "743520195848",
-  appId: "1:743520195848:web:1d99f70ff9894fe66d08bd"
+  appId: "1:743520195848:web:1d99f70ff9894fe66d08bd",
+  databaseURL: "https://insight-b62b1-default-rtdb.firebaseio.com/",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+export default database;

@@ -1,103 +1,540 @@
 {
-    "danh_sach_ve": [
-        {
-            "id": "1",
-            "Booking_Code": "ALTFGHJU",
-            "So_ve": 123456789034,
-            "Tinh_trang_su_dung": "Đã sử dụng",
-            "Ngay_su_dung": "14/04/2021",
-            "Ngay_xuat_ve": "14/04/2021",
-            "Cong_check_in": "Cổng 1"
-        },
-        {
-            "id": "2",
-            "Booking_Code": "ALTFGHJU",
-            "So_ve": 123456789034,
-            "Tinh_trang_su_dung": "Đã sử dụng",
-            "Ngay_su_dung": "14/04/2021",
-            "Ngay_xuat_ve": "14/04/2021",
-            "Cong_check_in": "Cổng 1"
-        },
-        {
-            "id": "3",
-            "Booking_Code": "ALTFGHJU",
-            "So_ve": 123456789034,
-            "Tinh_trang_su_dung": "Đã sử dụng",
-            "Ngay_su_dung": "14/04/2021",
-            "Ngay_xuat_ve": "14/04/2021",
-            "Cong_check_in": "Cổng 1"
-        },
-        {
-            "id": "4",
-            "Booking_Code": "ALTFGHJU",
-            "So_ve": 123456789034,
-            "Tinh_trang_su_dung": "Đã sử dụng",
-            "Ngay_su_dung": "14/04/2021",
-            "Ngay_xuat_ve": "14/04/2021",
-            "Cong_check_in": "Cổng 1"
-        },
-        {
-            "id": "5",
-            "Booking_Code": "ALTFGHJU",
-            "So_ve": 123456789034,
-            "Tinh_trang_su_dung": "Đã sử dụng",
-            "Ngay_su_dung": "14/04/2021",
-            "Ngay_xuat_ve": "14/04/2021",
-            "Cong_check_in": "Cổng 1"
-        },
-        {
-            "id": "6",
-            "Booking_Code": "ALTFGHJU",
-            "So_ve": 123456789034,
-            "Tinh_trang_su_dung": "Đã sử dụng",
-            "Ngay_su_dung": "14/04/2021",
-            "Ngay_xuat_ve": "14/04/2021",
-            "Cong_check_in": "Cổng 1"
-        },
-        {
-            "id": "7",
-            "Booking_Code": "ALTFGHJU",
-            "So_ve": 123456789034,
-            "Tinh_trang_su_dung": "Đã sử dụng",
-            "Ngay_su_dung": "14/04/2021",
-            "Ngay_xuat_ve": "14/04/2021",
-            "Cong_check_in": "Cổng 1"
-        },
-        {
-            "id": "8",
-            "Booking_Code": "ALTFGHJU",
-            "So_ve": 123456789034,
-            "Tinh_trang_su_dung": "Đã sử dụng",
-            "Ngay_su_dung": "14/04/2021",
-            "Ngay_xuat_ve": "14/04/2021",
-            "Cong_check_in": "Cổng 1"
-        },
-        {
-            "id": "9",
-            "Booking_Code": "ALTFGHJU",
-            "So_ve": 123456789034,
-            "Tinh_trang_su_dung": "Đã sử dụng",
-            "Ngay_su_dung": "14/04/2021",
-            "Ngay_xuat_ve": "14/04/2021",
-            "Cong_check_in": "Cổng 1"
-        },
-        {
-            "id": "10",
-            "Booking_Code": "ALTFGHJU",
-            "So_ve": 123456789034,
-            "Tinh_trang_su_dung": "Đã sử dụng",
-            "Ngay_su_dung": "14/04/2021",
-            "Ngay_xuat_ve": "14/04/2021",
-            "Cong_check_in": "Cổng 1"
-        },
-        {
-            "id": "11",
-            "Booking_Code": "ALTFGHJU",
-            "So_ve": 123456789034,
-            "Tinh_trang_su_dung": "Đã sử dụng",
-            "Ngay_su_dung": "14/04/2021",
-            "Ngay_xuat_ve": "14/04/2021",
-            "Cong_check_in": "Cổng 1"
-        }
-    ]
+    "danh_sach_ve": 
+    {
+        "goi_gia_dinh": 
+            [
+                {
+                    "id": "1",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 1",
+                    "a": "Chưa đối soát"
+                },
+                {
+                    "id": "2",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 1",
+                    "a": "Chưa đối soát"
+                },
+                {
+                    "id": "3",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 1",
+                    "a": "Chưa đối soát"
+                },
+                {
+                    "id": "4",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 1",
+                    "a": "Chưa đối soát"
+                },
+                {
+                    "id": "5",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 1",
+                    "a": "Chưa đối soát"
+                },
+                {
+                    "id": "6",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 1",
+                    "a": "Chưa đối soát"
+                },
+                {
+                    "id": "7",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 1",
+                    "a": "Chưa đối soát"
+                },
+                {
+                    "id": "8",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 1",
+                    "a": "Chưa đối soát"
+                },
+                {
+                    "id": "9",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 1",
+                    "a": "Chưa đối soát"
+                },
+                {
+                    "id": "10",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 1",
+                    "a": "Chưa đối soát"
+                },
+                {
+                    "id": "11",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 1",
+                    "a": "Đã đối soát"
+                },
+                {
+                    "id": "12",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 1",
+                    "a": "Đã đối soát"
+                },
+                {
+                    "id": "13",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 2",
+                    "a": "Đã đối soát"
+                },
+                {
+                    "id": "14",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 2",
+                    "a": "Đã đối soát"
+                },
+                {
+                    "id": "15",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 2",
+                    "a": "Đã đối soát"
+                },
+                {
+                    "id": "16",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 2",
+                    "a": "Đã đối soát"
+                },
+                {
+                    "id": "17",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 2",
+                    "a": "Đã đối soát"
+                },
+                {
+                    "id": "18",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 2",
+                    "a": "Đã đối soát"
+                },
+                {
+                    "id": "19",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 2",
+                    "a": "Đã đối soát"
+                },
+                {
+                    "id": "20",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 2",
+                    "a": "Đã đối soát"
+                },
+                {
+                    "id": "21",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 2",
+                    "a": "Đã đối soát"
+                },
+                {
+                    "id": "22",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 2",
+                    "a": "Chưa đối soát"
+                }
+            ],
+            "goi_su_kien":
+            [
+                {
+                    "id": "1",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Ten_su_kien": "Sự kiện 1",
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Han_su_dung": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 1",
+                    "a": "Chưa đối soát"
+                },
+                {
+                    "id": "2",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Ten_su_kien": "Sự kiện 1",
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Han_su_dung": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 1",
+                    "a": "Chưa đối soát"
+                },
+                {
+                    "id": "3",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Ten_su_kien": "Sự kiện 1",
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Han_su_dung": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 1",
+                    "a": "Chưa đối soát"
+                },
+                {
+                    "id": "4",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Ten_su_kien": "Sự kiện 1",
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Han_su_dung": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 1",
+                    "a": "Chưa đối soát"
+                },
+                {
+                    "id": "5",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Ten_su_kien": "Sự kiện 1",
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Han_su_dung": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 1",
+                    "a": "Chưa đối soát"
+                },
+                {
+                    "id": "6",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Ten_su_kien": "Sự kiện 1",
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Han_su_dung": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 1",
+                    "a": "Chưa đối soát"
+                },
+                {
+                    "id": "7",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Ten_su_kien": "Sự kiện 1",
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Han_su_dung": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 1",
+                    "a": "Chưa đối soát"
+                },
+                {
+                    "id": "8",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Ten_su_kien": "Sự kiện 1",
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Han_su_dung": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 1",
+                    "a": "Chưa đối soát"
+                },
+                {
+                    "id": "9",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Ten_su_kien": "Sự kiện 1",
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Han_su_dung": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 1",
+                    "a": "Chưa đối soát"
+                },
+                {
+                    "id": "10",
+                    "Booking_Code": "ALTFGHJU",
+                    "Ten_su_kien": "Sự kiện 1",
+                    "So_ve": 123456789034,
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Han_su_dung": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 1",
+                    "a": "Chưa đối soát"
+                },
+                {
+                    "id": "11",
+                    "Booking_Code": "ALTFGHJU",
+                    "Ten_su_kien": "Sự kiện 1",
+                    "So_ve": 123456789034,
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Han_su_dung": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 1",
+                    "a": "Chưa đối soát"
+                },
+                {
+                    "id": "12",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Ten_su_kien": "Sự kiện 2",
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Han_su_dung": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 1",
+                    "a": "Chưa đối soát"
+                },
+                {
+                    "id": "13",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Ten_su_kien": "Sự kiện 2",
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Han_su_dung": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 2",
+                    "a": "Chưa đối soát"
+                },
+                {
+                    "id": "14",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Ten_su_kien": "Sự kiện 2",
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Han_su_dung": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 2",
+                    "a": "Chưa đối soát"
+                },
+                {
+                    "id": "15",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Ten_su_kien": "Sự kiện 2",
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Han_su_dung": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 2",
+                    "a": "Chưa đối soát"
+                },
+                {
+                    "id": "16",
+                    "Booking_Code": "ALTFGHJU",
+                    "Ten_su_kien": "Sự kiện 2",
+                    "So_ve": 123456789034,
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Han_su_dung": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 2",
+                    "a": "Chưa đối soát"
+                },
+                {
+                    "id": "17",
+                    "Booking_Code": "ALTFGHJU",
+                    "So_ve": 123456789034,
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Han_su_dung": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 2",
+                    "a": "Chưa đối soát"
+                },
+                {
+                    "id": "18",
+                    "Booking_Code": "ALTFGHJU",
+                    "Ten_su_kien": "Sự kiện 2",
+                    "So_ve": 123456789034,
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Han_su_dung": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 2",
+                    "a": "Chưa đối soát"
+                },
+                {
+                    "id": "19",
+                    "Booking_Code": "ALTFGHJU",
+                    "Ten_su_kien": "Sự kiện 2",
+                    "So_ve": 123456789034,
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Han_su_dung": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 2",
+                    "a": "Chưa đối soát"
+                },
+                {
+                    "id": "20",
+                    "Booking_Code": "ALTFGHJU",
+                    "Ten_su_kien": "Sự kiện 2",
+                    "So_ve": 123456789034,
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Han_su_dung": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 2",
+                    "a": "Chưa đối soát"
+                },
+                {
+                    "id": "21",
+                    "Booking_Code": "ALTFGHJU",
+                    "Ten_su_kien": "Sự kiện 2",
+                    "So_ve": 123456789034,
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Han_su_dung": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 2",
+                    "a": "Chưa đối soát"
+                },
+                {
+                    "id": "22",
+                    "Booking_Code": "ALTFGHJU",
+                    "Ten_su_kien": "Sự kiện 2",
+                    "So_ve": 123456789034,
+                    "Tinh_trang_su_dung": "Đã sử dụng",
+                    "Ngay_su_dung": "14/04/2021",
+                    "Ngay_xuat_ve": "14/04/2021",
+                    "Han_su_dung": "14/04/2021",
+                    "Ten_loai_ve": "Vé cổng",
+                    "Cong_check_in": "Cổng 2",
+                    "a": "Chưa đối soát"
+                }
+            ]
+        
+    }
+    
 }

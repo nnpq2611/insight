@@ -1,7 +1,9 @@
 import React from 'react'
+import { SearchOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom'
 import './Header.css'
 import img2 from "../../assets/image/Frame.png"
+import { Input } from 'antd';
 
 const Header = () => {
     const data = [
@@ -17,7 +19,8 @@ const Header = () => {
     return (
         <ul className="header">
             <li className="search">
-                <input className="form-control fst-italic me-2" type="search" placeholder="Search" aria-label="Search" />
+                {/* <input className="form-control fst-italic me-2" type="search" placeholder="Search" aria-label="Search" /> */}
+                <Input className="form-control" placeholder="Search" suffix={<SearchOutlined />} />
             </li>
             <li className='icon'>
                 {data.map((item, index) => (

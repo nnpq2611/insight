@@ -3,3 +3,7 @@
     list-style-type: none;
 
 }
+
+.date .ant-picker-suffix{
+    color: orange;
+}
