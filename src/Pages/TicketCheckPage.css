@@ -1,38 +1,29 @@
 .tickercheck-page {
-    justify-content: space-between;
+    justify-content: left;
     list-style: none;
-    margin-left: 20px;
-    Width: 80%;   
+    margin-left: 20px; 
     padding-left: 15%;
     padding-top: 17px; 
     background-color: #f6f5f5;
-}
-
-.header {
     display: flex;
-    justify-content: space-between;
-    list-style: none;
-    margin: 0;
-    margin: horizontal;
-    Width: 100%;   
-    padding-left: 15%;
-    padding-top: 17px; 
-    padding-bottom: 17px;
 }
 
-.table-page{
+/* Table-page */
+.tickercheck-page .table-page{
     border-radius: 20px;
     height: 100%;
+    width: 73%;
     background-color: #ffff;
     padding: 7px 20px 7px 20px;
-    margin-top: 70px;
     margin-left: 10px;
+    margin-right: 0;
 }
 
+/* Search */
 .tickercheck-page .table-page .form-control {
     list-style-type: none;
-    width: 320px;
-    height: 30px;
+    width: 350px;
+    height: 40px;
     font-style: italic;
     border: 1px solid#EDE6E6;
     border-radius: 4px;
@@ -42,28 +33,135 @@
     resize: vertical;
     padding: 7px 20px 7px 20px;
     border-radius: 8px;
-      
 }
 
-.table{
-    border-collapse: collapse;
-    width: 100%;
+.tickercheck-page .table-page ul {
+    list-style-type: none;
+    padding: 0;
+    display: block;
 }
 
-.table td, .table th{
-    text-align: left;
-    padding: 8px;
-}
-
-.table tr:nth-child(odd){background-color: #F7F8FB;}
-
-.table th{
-    background-color: #F1F4F8;
-    color: black;
-}
-
-.header li{
+.tickercheck-page .table-page ul li {
     display: inline-block;
-    padding: 0 10px;
+    padding: center;
+    margin: 10px 10px;
 }
-    
+
+/* Tabs: gói gia đình, gói sự kiện */
+.tickercheck-page .table-page .ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #FF993C !important;
+    font-weight: 500;
+}
+
+.tickercheck-page .table-page .ant-tabs-ink-bar{
+    background-color: #FF993C;
+}
+
+.tickercheck-page .table-page .ant-tabs-tab:hover {
+    color: #FF993C;
+    font-weight: 500;
+}
+
+.tickercheck-page .table-page .ant-tabs-tab-btn:active:active {
+    color: #FF993C;
+    font-weight: 500;
+}
+
+.tickercheck-page .table-page .ant-tabs-tab {
+    color: #b1b1b1;
+    font-size: 14px;
+}
+
+/* Button: Chốt đối soát */
+.tickercheck-page .btn-control{
+    display: inline;
+    float: right;
+}
+
+.tickercheck-page .btn-control .ant-btn{
+    border-color: #FF993C;
+    color: #FF993C;
+    font-weight: 500;
+}
+
+.tickercheck-page .btn-control .ant-btn:hover{
+    box-shadow: #FF993C 0px 3px 10px 0px;
+}
+
+/* Lọc vé */
+.tickercheck-page .body-loc_ve{
+    border-radius: 20px;
+    height: 100%;
+    width: 27%;
+    background-color: #ffff;
+    padding: 7px 20px 7px 20px;
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+.tickercheck-page .body-loc_ve ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.tickercheck-page .body-loc_ve ul li {
+    padding: center;
+    margin: 10px 10px 5px 5px;
+}
+
+.tickercheck-page .body-loc_ve p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #1E0D03;
+    margin-bottom: 0;
+}
+
+.tickercheck-page .body-loc_ve .status-loc_ve{
+    display: flex;
+}
+
+ .tickercheck-page .body-loc_ve .status-loc_ve .satus-radio{
+    padding: 15px 0 10px 20px;
+}
+
+.tickercheck-page .body-loc_ve .since{
+    display: flex;
+}
+
+.tickercheck-page .body-loc_ve .since .date{
+    padding: 10px 0 10px 80px;
+}
+
+.tickercheck-page .body-loc_ve .to-date{
+    display: flex;
+}
+
+.tickercheck-page .body-loc_ve .to-date .date{
+    padding: 10px 0 10px 70px;
+}
+
+.tickercheck-page .body-loc_ve .btn-filter{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    display: block;
+    border-color: #FF993C;
+    color: #FF993C;
+    font-weight: 500;
+    width: 100px;
+}
+
+/* .tickercheck-page .body-loc_ve .btn-filter:hover{
+    box-shadow: #FF993C 0px 3px 10px 0px;
+}
+
+.tickercheck-page .body-loc_ve .btn-filter:hover{
+    color: #FF993C;
+    border-color:  #FF993C;
+} */
+
+
+
+

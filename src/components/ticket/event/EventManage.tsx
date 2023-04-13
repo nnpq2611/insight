@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import { ref, get } from "firebase/database";
-
 import { Pagination } from "antd";
 import database from "../../../firebase/firebase";
+import "./EventManage.css"; 
 
-interface goi_gia_dinh {
+interface goi_su_kien {
   id: number;
   Booking_Code: string;
   So_ve: string;
+  Ten_su_kien: string;
   Tinh_trang_su_dung: string;
   Ngay_su_dung: string;
-  Ngay_xuat_ve: string;
+  Han_su_dung: string;
   Cong_check_in: string;
 }
 
@@ -18,9 +19,10 @@ const ticket_list = [
   "STT",
   "Booking code",
   "Số vé",
+  "Tên sự kiện",
   "Tình trạng sử dụng",
   "Ngày sử dụng",
-  "Ngày xuất vé",
+  "Hạn sử dụng",
   "Cổng Check-in",
 ];
 
@@ -31,26 +33,27 @@ const renderBody = (item: any, index: any) => (
     <td>{item.id}</td>
     <td>{item.Booking_Code}</td>
     <td>{item.So_ve}</td>
+    <td>{item.Ten_su_kien}</td>
     <td
       className={
         item.Tinh_trang_su_dung === "Đã sử dụng"
           ? "used"
           : item.Tinh_trang_su_dung === "Chưa sử dụng"
           ? "notUse"
-          : "dated"
+          : "expired"
       }
     >
       {item.Tinh_trang_su_dung}
     </td>
     <td>{item.Ngay_su_dung}</td>
-    <td>{item.Ngay_xuat_ve}</td>
+    <td>{item.Han_su_dung}</td>
     <td>{item.Cong_check_in}</td>
   </tr>
 );
 
-const Family = (item: any, index: any) => {
-  const [danh_sach_ve, setGoigiadinh] = useState<goi_gia_dinh[]>([]);
-  const [dataShow, setDataShow] = useState<goi_gia_dinh[]>([]);
+const Event = (item: any, index: any) => {
+  const [danh_sach_ve, setSukien] = useState<goi_su_kien[]>([]);
+  const [dataShow, setDataShow] = useState<goi_su_kien[]>([]);
 
   const selectPage = (page: any) => {
     const start = 10 * page;
@@ -60,11 +63,11 @@ const Family = (item: any, index: any) => {
 
   React.useEffect(() => {
     // get data from firebase
-    const starCountRef = ref(database, "danh_sach_ve/goi_gia_dinh");
+    const starCountRef = ref(database, "danh_sach_ve/goi_su_kien");
     get(starCountRef)
       .then((snapshot: any) => {
         if (snapshot.exists()) {
-          setGoigiadinh(snapshot.val());
+          setSukien(snapshot.val());
           setDataShow(snapshot.val().slice(0, 10));
         } else {
           console.log("No data available");
@@ -73,25 +76,24 @@ const Family = (item: any, index: any) => {
       .catch((error: any) => {
         console.error(error);
       });
-  }, []);
+    }, []);
+    return (
+      <div className="bang1-event">
+        <table className="table">
+          <thead>
+            <tr>{ticket_list.map(renderHead)}</tr>
+          </thead>
+          <tbody>{dataShow.map(renderBody)}</tbody>
+        </table>
 
-  return (
-    <div className="bang">
-      <table className="table">
-        <thead>
-          <tr>{ticket_list.map(renderHead)}</tr>
-        </thead>
-        <tbody>{dataShow.map(renderBody)}</tbody>
-      </table>
-
-      <Pagination
-        defaultCurrent={1}
-        total={danh_sach_ve.length}
-        onChange={(page) => selectPage(page - 1)}
-        className="pagination"
-      />
-    </div>
-  );
+        <Pagination
+          defaultCurrent={1}
+          total={danh_sach_ve.length}
+          onChange={(page) => selectPage(page - 1)}
+          className="pagination"
+        />
+      </div>
+    );
 };
 
-export default Family;
+export default Event;

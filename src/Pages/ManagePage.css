@@ -7,19 +7,20 @@
     background-color: #f6f5f5;
 }
 
-.table-page {
+/* Table-page */
+.magage-page .table-page {
     border-radius: 20px;
     height: 100%;
     background-color: #ffff;
     padding: 7px 20px 7px 20px;
-    margin-top: 70px;
+    margin-top: 80px;
     margin-left: 10px;
 }
 
+/* Search */
 .magage-page .table-page .form-control {
-    list-style-type: none;
-    width: 320px;
-    height: 30px;
+    width: 350px;
+    height: 40px;
     font-style: italic;
     border: 1px solid#EDE6E6;
     box-sizing: border-box;
@@ -30,108 +31,90 @@
     border-radius: 8px;
 }
 
-.bang {
-    border-radius: 20px;
-}
-
-.table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-.table td .table th {
-    text-align: left;
-    padding: 8px;
-}
-
-.table tr:nth-child(odd) {
-    background-color: #F7F8FB;
-}
-
-.table th {
-    background-color: #F1F4F8;
-    color: black;
-}
-
-.table-page ul {
+.magage-page .table-page ul {
     list-style-type: none;
     padding: 0;
     display: block;
-
 }
 
-.table-page ul li {
+.magage-page .table-page ul li {
     display: inline-block;
     padding: center;
     margin: 10px 10px;
-
 }
 
-.table-page .ticket_filter {
-    color: #FF993C;
-    border: 1px solid #FF993C;
-    border-radius: 4px;
-    width: 90px;
-    height: 30px;
-    padding: 5px 5px 0 20px;
-    margin-left: 530px;
-}
-
-.table-page .ticket_filter:hover {
-    color: #fff;
-    background-color: #FF993C;
-}
-
-.table-page .export_file {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: #FF993C;
-    border: 1px solid #FF993C;
-    border-radius: 4px;
-    width: 110px;
-    height: 30px;
-    padding: 5px 5px 0 20px;
-
-}
-
-.table-page .export_file:hover {
-    color: #fff;
-    background-color: #FF993C;
-}
-
-.table-page .pagination {
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
-.header li {
-    display: inline-block;
-    padding: 0 10px;
-}
-
-.table-page .ant-tabs-tab-active .ant-tabs-tab-btn {
+/* Tabs: gói gia đình, gói sự kiện */
+.magage-page .table-page .ant-tabs-tab-active .ant-tabs-tab-btn {
     color: #FF993C !important;
     font-weight: 500;
 }
 
-.table-page .ant-tabs-ink-bar{
+.magage-page .table-page .ant-tabs-ink-bar{
     background-color: #FF993C;
 }
 
-.table-page .ant-tabs-tab:hover {
+.magage-page .table-page .ant-tabs-tab:hover {
     color: #FF993C;
     font-weight: 500;
 }
 
-.table-page .ant-tabs-tab-btn:active:active {
+.magage-page .table-page .ant-tabs-tab-btn:active:active {
     color: #FF993C;
     font-weight: 500;
 }
 
-.table-page .ant-tabs-tab {
+.magage-page .table-page .ant-tabs-tab {
     color: #b1b1b1;
     font-size: 14px;
+}
+
+/* Button: lọc vé, xuất file */
+.magage-page .feature{
+    display: inline;
+    float: right;
+}
+
+.magage-page .feature .ant-btn{
+    border-color: #FF993C;
+    color: #FF993C;
+    font-weight: 500;
+}
+
+.magage-page .feature .ant-btn:hover{
+    box-shadow: #FF993C 0px 3px 10px 0px;
+}
+
+/* Modal */
+.custom-modal .ant-modal-title {
+    text-align: center;
+    font-size: 18px;
+}
+
+.custom-modal .btn-filter{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    display: block;
+    border-color: #FF993C;
+    color: #FF993C;
+    font-weight: 500;
+    width: 100px;
+}
+
+.custom-modal .btn-filter:hover{
+    box-shadow: #FF993C 0px 3px 10px 0px;
+}
+
+.custom-modal .btn-filter:hover{
+    color: #FF993C;
+    border-color:  #FF993C;
+}
+
+.custom-modal .date-modal{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    padding-left: 0;
+    padding-right: 17%;
 }
 

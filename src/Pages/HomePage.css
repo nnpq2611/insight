@@ -22,23 +22,12 @@
     list-style-type: none;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    margin: 0;
-    margin: horizontal;
-    Width: 100%;   
-    padding-left: 15%;
-    padding-top: 17px; 
-}
-
-.chart{
+.home-page .chart{
     border-radius: 20px;
     height: 100%;
     background-color: #ffff;
     padding: 7px 20px 7px 20px;
-    margin-top: 70px;
+    margin-top: 80px;
     margin-left: 10px;
     width: 100%;
 }

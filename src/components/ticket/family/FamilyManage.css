@@ -1,0 +1,106 @@
+/* Table */
+.bang1-family .table {
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+}
+
+.bang1-family .table tr:nth-child(even) {
+    background-color: #F7F8FB;
+    height: 40px;
+}
+
+.bang1-family .table th {
+    background-color: #F1F4F8;
+    color: black;
+    height: 40px;
+    padding: 0 20px 0 20px;
+}
+
+.bang1-family .table td {
+    height: 40px;
+    text-align: center;
+}
+
+/* Pagination */
+.bang1-family .pagination {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* Đã sử dụng */
+.bang1-family .used{
+    color: #919DBA;  
+    outline-offset: -10px;
+    padding-bottom: 7px;
+    position: relative;
+}
+
+.bang1-family .used:before {
+    border: 3px solid #919DBA;
+    border-radius: 5px;
+    top: 5px;
+    right: 50px;
+    bottom: 8px;
+    left: 45px;     
+}
+
+.bang1-family .used:before{
+    content: "\2022";
+    font-size: 20px;
+    position: absolute;
+    text-align: left; 
+    padding-left: 13px;
+}
+
+/* Chưa sử dụng */
+.bang1-family .notUse{
+    color: #03AC00;  
+    outline-offset: -10px;
+    padding-bottom: 7px;
+    position: relative;
+}
+
+.bang1-family .notUse:before {
+    border: 3px solid #03AC00;
+    border-radius: 5px;
+    top: 5px;
+    right: 50px;
+    bottom: 8px;
+    left: 45px;    
+}
+
+.bang1-family .notUse:before{
+    content: "\2022";
+    font-size: 20px;
+    position: absolute;
+    text-align: left; 
+    padding-left: 13px;
+}
+
+/* Hết hạn */
+.bang1-family .expired{
+    color: #FD5959;  
+    outline-offset: -10px;
+    padding-bottom: 7px;
+    position: relative;
+}
+
+.bang1-family .expired:before {
+    border: 3px solid #FD5959;
+    border-radius: 5px;
+    top: 5px;
+    right: 50px;
+    bottom: 8px;
+    left: 45px;    
+}
+
+.bang1-family .expired:before{
+    content: "\2022";
+    font-size: 20px;
+    position: absolute;
+    text-align: left; 
+    padding-left: 13px;
+}
