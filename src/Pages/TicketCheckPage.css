@@ -91,7 +91,6 @@
 /* Lọc vé */
 .tickercheck-page .body-loc_ve{
     border-radius: 20px;
-    height: 100%;
     width: 27%;
     background-color: #ffff;
     padding: 7px 20px 7px 20px;
@@ -104,11 +103,14 @@
     padding: 0;
     display: flex;
     flex-direction: column;
+    /* list-style: none;
+    padding: 0; */
 }
 
 .tickercheck-page .body-loc_ve ul li {
     padding: center;
     margin: 10px 10px 5px 5px;
+    
 }
 
 .tickercheck-page .body-loc_ve p {
@@ -118,20 +120,27 @@
     margin-bottom: 0;
 }
 
-.tickercheck-page .body-loc_ve .status-loc_ve{
+.tickercheck-page .body-loc_ve .status-doi_soat{
     display: flex;
 }
 
- .tickercheck-page .body-loc_ve .status-loc_ve .satus-radio{
-    padding: 15px 0 10px 20px;
+ .tickercheck-page .body-loc_ve .status-doi_soat .ant-radio-wrapper{
+    padding: 10px 0 5px 20px;
 }
 
+.tickercheck-page .body-loc_ve .loai-ve-loc_ve{
+    display: flex;
+}
+
+.tickercheck-page .body-loc_ve .loai-ve-loc_ve .ve_cong{
+    padding: 0 0 10px 100px;
+}
 .tickercheck-page .body-loc_ve .since{
     display: flex;
 }
 
 .tickercheck-page .body-loc_ve .since .date{
-    padding: 10px 0 10px 80px;
+    margin: 10px 0 10px 90px;
 }
 
 .tickercheck-page .body-loc_ve .to-date{
@@ -139,28 +148,24 @@
 }
 
 .tickercheck-page .body-loc_ve .to-date .date{
-    padding: 10px 0 10px 70px;
+    margin: 10px 0 10px 80px;
 }
 
 .tickercheck-page .body-loc_ve .btn-filter{
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-    display: block;
     border-color: #FF993C;
     color: #FF993C;
     font-weight: 500;
-    width: 100px;
-}
-
-/* .tickercheck-page .body-loc_ve .btn-filter:hover{
-    box-shadow: #FF993C 0px 3px 10px 0px;
+    width: 35%;
+    margin: 10px auto;
 }
 
 .tickercheck-page .body-loc_ve .btn-filter:hover{
-    color: #FF993C;
-    border-color:  #FF993C;
-} */
+    box-shadow: #FF993C 0px 3px 10px 0px;
+}
+
+
+
+
 
 
 

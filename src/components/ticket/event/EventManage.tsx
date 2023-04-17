@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ref, get } from "firebase/database";
 import { Pagination } from "antd";
 import database from "../../../firebase/firebase";
-import "./EventManage.css"; 
+import "./EventManage.css";
 
 interface goi_su_kien {
   id: number;
@@ -28,6 +28,22 @@ const ticket_list = [
 
 const renderHead = (item: any, index: any) => <th key={index}>{item}</th>;
 
+const converDate = (dateString: string) => {
+  const dateParts = dateString.split("/");
+  const year = +dateParts[2];
+  const month = +dateParts[1] - 1;
+  const day = +dateParts[0];
+  return new Date(year, month, day);
+};
+
+const getCurrentDate = () => {
+  const date = new Date();
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear();
+  return new Date(`${month}/${day}/${year}`);
+};
+
 const renderBody = (item: any, index: any) => (
   <tr key={index}>
     <td>{item.id}</td>
@@ -38,12 +54,16 @@ const renderBody = (item: any, index: any) => (
       className={
         item.Tinh_trang_su_dung === "Đã sử dụng"
           ? "used"
-          : item.Tinh_trang_su_dung === "Chưa sử dụng"
-          ? "notUse"
-          : "expired"
+          : converDate(item.Han_su_dung).getTime() < getCurrentDate().getTime()
+          ? "expired"
+          : "notUse"
       }
     >
-      {item.Tinh_trang_su_dung}
+      {item.Tinh_trang_su_dung === "Đã sử dụng"
+        ? "Đã sử dụng"
+        : converDate(item.Han_su_dung).getTime() < getCurrentDate().getTime()
+        ? "Hết hạn"
+        : "Chưa sử dụng"}
     </td>
     <td>{item.Ngay_su_dung}</td>
     <td>{item.Han_su_dung}</td>
@@ -51,49 +71,38 @@ const renderBody = (item: any, index: any) => (
   </tr>
 );
 
-const Event = (item: any, index: any) => {
-  const [danh_sach_ve, setSukien] = useState<goi_su_kien[]>([]);
+const Event: React.FC<{ danh_sach_ve_su_kien_show: goi_su_kien[] }> = ({
+  danh_sach_ve_su_kien_show,
+}) => {
   const [dataShow, setDataShow] = useState<goi_su_kien[]>([]);
+
+  React.useEffect(() => {
+    setDataShow(danh_sach_ve_su_kien_show.slice(0, 10));
+  }, [danh_sach_ve_su_kien_show]);
 
   const selectPage = (page: any) => {
     const start = 10 * page;
     const end = start + 10;
-    setDataShow(danh_sach_ve.slice(start, end));
+    setDataShow(danh_sach_ve_su_kien_show.slice(start, end));
   };
 
-  React.useEffect(() => {
-    // get data from firebase
-    const starCountRef = ref(database, "danh_sach_ve/goi_su_kien");
-    get(starCountRef)
-      .then((snapshot: any) => {
-        if (snapshot.exists()) {
-          setSukien(snapshot.val());
-          setDataShow(snapshot.val().slice(0, 10));
-        } else {
-          console.log("No data available");
-        }
-      })
-      .catch((error: any) => {
-        console.error(error);
-      });
-    }, []);
-    return (
-      <div className="bang1-event">
-        <table className="table">
-          <thead>
-            <tr>{ticket_list.map(renderHead)}</tr>
-          </thead>
-          <tbody>{dataShow.map(renderBody)}</tbody>
-        </table>
+  return (
+    <div className="bang1-event">
+      <table className="table">
+        <thead>
+          <tr>{ticket_list.map(renderHead)}</tr>
+        </thead>
+        <tbody>{dataShow.map(renderBody)}</tbody>
+      </table>
 
-        <Pagination
-          defaultCurrent={1}
-          total={danh_sach_ve.length}
-          onChange={(page) => selectPage(page - 1)}
-          className="pagination"
-        />
-      </div>
-    );
+      <Pagination
+        defaultCurrent={1}
+        total={danh_sach_ve_su_kien_show.length}
+        onChange={(page) => selectPage(page - 1)}
+        className="pagination"
+      />
+    </div>
+  );
 };
 
 export default Event;

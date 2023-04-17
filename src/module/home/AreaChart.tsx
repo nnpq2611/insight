@@ -1,6 +1,7 @@
 import { ApexOptions } from "apexcharts";
 import React from "react";
 import ReactApexChart from "react-apexcharts";
+import DatePickerCustom from "../date/DatePicker";
 
 const AreaChart = () => {
   const series = [
@@ -23,13 +24,13 @@ const AreaChart = () => {
     xaxis: {
       type: "datetime",
       categories: [
-        "2018-09-19T00:00:00.000Z",
-        "2018-09-19T01:30:00.000Z",
-        "2018-09-19T02:30:00.000Z",
-        "2018-09-19T03:30:00.000Z",
-        "2018-09-19T04:30:00.000Z",
-        "2018-09-19T05:30:00.000Z",
-        "2018-09-19T06:30:00.000Z",
+        "2023-09-19T00:00:00.000Z",
+        "2023-09-19T01:30:00.000Z",
+        "2023-09-19T02:30:00.000Z",
+        "2023-09-19T03:30:00.000Z",
+        "2023-09-19T04:30:00.000Z",
+        "2023-09-19T05:30:00.000Z",
+        "2023-09-19T06:30:00.000Z",
       ],
     },
     tooltip: {
@@ -41,6 +42,7 @@ const AreaChart = () => {
 
   return (
     <div>
+      <DatePickerCustom/>
       <ReactApexChart
         options={options}
         series={series}

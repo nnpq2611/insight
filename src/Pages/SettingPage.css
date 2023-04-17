@@ -1,4 +1,4 @@
-.magage-page {
+.setting-page {
     justify-content: space-between;
     list-style: none;
     margin-left: 20px;
@@ -8,7 +8,7 @@
 }
 
 /* Table-page */
-.magage-page .table-page {
+.setting-page .table-page {
     border-radius: 20px;
     height: 100%;
     background-color: #ffff;
@@ -18,7 +18,7 @@
 }
 
 /* Search */
-.magage-page .table-page .form-control {
+.setting-page .table-page .form-control {
     width: 350px;
     height: 40px;
     font-style: italic;
@@ -31,94 +31,56 @@
     border-radius: 8px;
 }
 
-.magage-page .table-page ul {
+.setting-page .table-page ul {
     list-style-type: none;
     padding: 0;
     display: block;
 }
 
-.magage-page .table-page ul li {
+.setting-page .table-page ul li {
     display: inline-block;
     padding: center;
     margin: 10px 10px;
 }
 
 /* Tabs: gói gia đình, gói sự kiện */
-.magage-page .table-page .ant-tabs-tab-active .ant-tabs-tab-btn {
+.setting-page .table-page .ant-tabs-tab-active .ant-tabs-tab-btn {
     color: #FF993C !important;
     font-weight: 500;
 }
 
-.magage-page .table-page .ant-tabs-ink-bar{
+.setting-page .table-page .ant-tabs-ink-bar{
     background-color: #FF993C;
 }
 
-.magage-page .table-page .ant-tabs-tab:hover {
+.setting-page .table-page .ant-tabs-tab:hover {
     color: #FF993C;
     font-weight: 500;
 }
 
-.magage-page .table-page .ant-tabs-tab-btn:active:active {
+.setting-page .table-page .ant-tabs-tab-btn:active:active {
     color: #FF993C;
     font-weight: 500;
 }
 
-.magage-page .table-page .ant-tabs-tab {
+.setting-page .table-page .ant-tabs-tab {
     color: #b1b1b1;
     font-size: 14px;
 }
 
 /* Button: lọc vé, xuất file */
-.magage-page .feature{
+.setting-page .feature{
     display: inline;
     float: right;
 }
 
-.magage-page .feature .ant-btn{
+.setting-page .feature .ant-btn{
     border-color: #FF993C;
     color: #FF993C;
     font-weight: 500;
 }
 
-.magage-page .feature .ant-btn:hover{
+.setting-page .feature .ant-btn:hover{
     box-shadow: #FF993C 0px 3px 10px 0px;
-}
-
-/* Modal */
-.custom-modal .ant-modal-title {
-    text-align: center;
-    font-size: 18px;
-}
-
-.custom-modal .btn-filter{
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-    display: block;
-    border-color: #FF993C;
-    color: #FF993C;
-    font-weight: 500;
-    width: 100px;
-}
-
-.custom-modal .btn-filter:hover{
-    box-shadow: #FF993C 0px 3px 10px 0px;
-}
-
-.custom-modal .btn-filter:hover{
-    color: #FF993C;
-    border-color:  #FF993C;
-}
-
-.custom-modal .date-modal{
-    display: flex;
-    list-style: none;
-    justify-content: space-between;
-    padding-left: 0;
-    padding-right: 17%;
-}
-
-.date-picker .ant-picker-suffix{
-    color: #FF993C;
 }
 

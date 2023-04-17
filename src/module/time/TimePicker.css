@@ -1,0 +1,9 @@
+.time{
+    display: flex;
+    list-style-type: none;
+
+}
+
+.time .ant-picker-suffix{
+    color: orange;
+}

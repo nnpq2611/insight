@@ -48,48 +48,35 @@ const renderBody = (item: any, index: any) => (
 );
 
 
-const EventTicket = () => {
-  const [danh_sach_ve, setSukien] = useState<goi_su_kien[]>([]);
+const EventTicket: React.FC<{danh_sach_ve_su_kien_show: goi_su_kien[]}> = ({danh_sach_ve_su_kien_show})=> {
   const [dataShow, setDataShow] = useState<goi_su_kien[]>([]);
+
+  React.useEffect(() => {
+    setDataShow(danh_sach_ve_su_kien_show.slice(0, 10));
+  }, [danh_sach_ve_su_kien_show]);
 
   const selectPage = (page: any) => {
     const start = 10 * page;
     const end = start + 10;
-    setDataShow(danh_sach_ve.slice(start, end));
+    setDataShow(danh_sach_ve_su_kien_show.slice(start, end));
   };
-  React.useEffect(() => {
-    // get data from firebase
-    const starCountRef = ref(database, "danh_sach_ve/goi_su_kien");
-    get(starCountRef)
-      .then((snapshot: any) => {
-        if (snapshot.exists()) {
-          setSukien(snapshot.val());
-          setDataShow(snapshot.val().slice(0, 10));
-        } else {
-          console.log("No data available");
-        }
-      })
-      .catch((error: any) => {
-        console.error(error);
-      });
-    }, []);
-    return (
-      <div className='bang2-event'>
-        <table className="table">
-          <thead>
-            <tr>{ticket_list.map(renderHead)}</tr>
-          </thead>
-          <tbody>{dataShow.map(renderBody)}</tbody>
-        </table>
+  return (
+    <div className='bang2-event'>
+      <table className="table">
+        <thead>
+          <tr>{ticket_list.map(renderHead)}</tr>
+        </thead>
+        <tbody>{dataShow.map(renderBody)}</tbody>
+      </table>
 
-        <Pagination
-          defaultCurrent={1}
-          total={danh_sach_ve.length}
-          onChange={(page) => selectPage(page - 1)}
-          className="pagination"
-        />
-      </div>
-    )
+      <Pagination
+        defaultCurrent={1}
+        total={danh_sach_ve_su_kien_show.length}
+        onChange={(page) => selectPage(page - 1)}
+        className="pagination"
+      />
+    </div>
+  )
 }
 
 export default EventTicket

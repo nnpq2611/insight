@@ -44,16 +44,14 @@
     top: 5px;
     right: 50px;
     bottom: 8px;
-    left: 45px;     
-}
-
-.bang1-family .used:before{
+    left: 45px;  
     content: "\2022";
     font-size: 20px;
     position: absolute;
     text-align: left; 
-    padding-left: 13px;
+    padding-left: 13px;   
 }
+
 
 /* Chưa sử dụng */
 .bang1-family .notUse{
@@ -70,9 +68,6 @@
     right: 50px;
     bottom: 8px;
     left: 45px;    
-}
-
-.bang1-family .notUse:before{
     content: "\2022";
     font-size: 20px;
     position: absolute;
@@ -94,13 +89,10 @@
     top: 5px;
     right: 50px;
     bottom: 8px;
-    left: 45px;    
-}
-
-.bang1-family .expired:before{
+    left: 45px;   
     content: "\2022";
     font-size: 20px;
     position: absolute;
     text-align: left; 
-    padding-left: 13px;
+    padding-left: 13px; 
 }

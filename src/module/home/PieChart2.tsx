@@ -3,7 +3,7 @@ import React from "react";
 import ReactApexChart from "react-apexcharts";
 import "./PieChart.css"
 
-const PieChart = () => {
+const PieChart2 = () => {
   const series = [44, 55];
   const options : ApexOptions = {
     chart: {
@@ -27,11 +27,7 @@ const PieChart = () => {
   };
   return (
     <div className="pie-chart">
-      <ReactApexChart
-        options={options}
-        series={series}
-        type="donut"
-      />
+      <h5>Gói sự kiện</h5>
       <ReactApexChart
         options={options}
         series={series}
@@ -41,4 +37,4 @@ const PieChart = () => {
   );
 };
 
-export default PieChart;
+export default PieChart2;
