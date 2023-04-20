@@ -13,7 +13,7 @@ import Event from "../components/ticket/event/EventSetting";
 import database from "../firebase/firebase";
 import { get, ref, set } from "firebase/database";
 import dayjs from 'dayjs';
-import axios from 'axios';
+// import axios from 'axios';
 
 interface goi_gia_dinh {
   id: number;
@@ -278,13 +278,13 @@ const SettingPage = () => {
             <ul className="date-modal1">
               <li className="since">   
                 <h4>Ngày áp dụng</h4>             
-                <DatePicker defaultValue={dayjs('20/04/2023', 'DD/MM/YYYY')} onChange={handleGetStartDate} format={dateFormatList} className="Date"/>
-                <TimePicker defaultValue={dayjs('08:00:00', 'HH:mm:ss')} className="Time"/>
+                <DatePicker onChange={handleGetStartDate} format={dateFormatList} className="Date"/>
+                <TimePicker className="Time"/>
               </li>              
               <li className="to-date">
                 <h4>Đến hết hạn</h4>
-                <DatePicker defaultValue={dayjs('20/04/2023', 'DD/MM/YYYY')}  onChange={handleGetEndDate} format={dateFormatList} className="Date"/>
-                <TimePicker defaultValue={dayjs('08:00:00', 'HH:mm:ss')} className="Time"/>
+                <DatePicker onChange={handleGetEndDate} format={dateFormatList} className="Date"/>
+                <TimePicker className="Time"/>
               </li>
             </ul>
             <h4>Giá vé áp dụng</h4>

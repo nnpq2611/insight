@@ -1,13 +1,12 @@
 import { ApexOptions } from "apexcharts";
 import React from "react";
 import ReactApexChart from "react-apexcharts";
-import DatePickerCustom from "../date/DatePicker";
 
-const AreaChart = () => {
+const AreaChart: React.FC<{ data: any }> = ({ data }) => {
   const series = [
     {
       name: "series1",
-      data: [0,0,0,0,0,0,0],
+      data: [...data],
     },
   ];
   const options: ApexOptions = {
@@ -23,8 +22,9 @@ const AreaChart = () => {
       colors: ["rgba(255, 153, 60, 1)"],
     },
     xaxis: {
-      categories: ["Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7", "CN"],
+      categories: ["Chủ nhật", "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7"],
     },
+    colors: ["rgba(250, 160, 95, 0.26)", "rgba(255, 255, 255, 0)"],
     tooltip: {
       x: {
         format: "dd/MM/yy HH:mm",

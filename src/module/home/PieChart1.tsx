@@ -3,8 +3,8 @@ import React from "react";
 import ReactApexChart from "react-apexcharts";
 import "./PieChart.css"
 
-const PieChart1 = () => {
-  const series = [0, 0];
+const PieChart1: React.FC<{data: any}> = ({data}) => {
+  const series = [...data];
   const options : ApexOptions = {
     chart: {
       width: 380,
