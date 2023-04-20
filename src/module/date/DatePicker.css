@@ -1,7 +1,6 @@
 .date{
-    display: flex;
     list-style-type: none;
-
+    float: right;
 }
 
 .date .ant-picker-suffix{

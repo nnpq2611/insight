@@ -41,6 +41,7 @@ const TicketCheckPage = () => {
   const [status, setStatus] = useState<string>("all");
   const [startDate, setStartDate] = useState<Date>();
   const [endDate, setEndDate] = useState<Date>();
+  // const [su_kien, setSu_kien] = useState<string>("all");
   const dateFormatList = ['DD/MM/YYYY'];
 
   const [loading, setLoading] = useState(false);
@@ -53,14 +54,6 @@ const TicketCheckPage = () => {
     return new Date(year, month, day);
   };
   
-  const getCurrentDate = () => {
-    const date = new Date();
-    const day = date.getDate();
-    const month = date.getMonth() + 1;
-    const year = date.getFullYear();
-    return new Date(`${month}/${day}/${year}`);
-  };
-
   React.useEffect(() => {
     // get data goi gia dinh from firebase
     setLoading(true);
@@ -117,6 +110,32 @@ const TicketCheckPage = () => {
       let filter = danh_sach_ve;
       if (status !== "all") {
         filter = filter.filter((item) => {
+          if (status === "") {
+            return item.a === "Chưa đối soát";
+          }
+          if (status === "Đã đối soát") {
+            return item.a !== "Chưa đối soát" ;
+          }
+        });
+      }
+      if (startDate) {
+        filter = filter.filter((item) => {
+          const date = converDate(item.Ngay_xuat_ve).getTime();
+          return date >= startDate.getTime()
+        });
+      }
+      if (endDate) {
+        filter = filter.filter((item) => {
+          const date = converDate(item.Ngay_xuat_ve).getTime();
+          return date <= endDate.getTime()
+        });
+      }
+      setGoigiadinhShow(filter);
+    }
+    if (packed) {
+      let filter = danh_sach_ve;
+      if (status !== "all") {
+        filter = filter.filter((item) => {
           if (status === "Chưa đối soát") {
             return item.a === "Chưa đối soát";
           }
@@ -138,8 +157,21 @@ const TicketCheckPage = () => {
         });
       }
       setGoigiadinhShow(filter);
-    } else {
+    } 
+    else {
       let filter = danh_sach_ve_su_kien;
+      // if (su_kien !== "all") {
+      //   filter = filter.filter((item) => {
+      //     if (su_kien === "Sự kiện 1") {
+      //       return item.Ten_su_kien === "Sự kiện 1";
+      //     }
+      //     if (su_kien === "Sự kiện 2") {
+      //       return item.Ten_su_kien === "Sự kiện 2";
+      //     }
+      //     if (su_kien === "Sự kiện 3") {
+      //       return item.Ten_su_kien === "Sự kiện 3";
+      //     }
+      // });
       if (status !== "all") {
         filter = filter.filter((item) => {
           if (status === "Chưa đối soát") {
@@ -152,13 +184,13 @@ const TicketCheckPage = () => {
       }
       if (startDate) {
         filter = filter.filter((item) => {
-          const date = converDate(item.Han_su_dung).getTime();
+          const date = converDate(item.Ngay_xuat_ve).getTime();
           return date >= startDate.getTime()
         });
       }
       if (endDate) {
         filter = filter.filter((item) => {
-          const date = converDate(item.Han_su_dung).getTime();
+          const date = converDate(item.Ngay_xuat_ve).getTime();
           return date <= endDate.getTime()
         });
       }
@@ -256,6 +288,7 @@ const TicketCheckPage = () => {
               options={[
                 { value: 'Sự kiện 1', label: 'Sự kiện 1' },
                 { value: 'Sự kiện 2', label: 'Sự kiện 2' },
+                { value: 'Sự kiện 3', label: 'Sự kiện 3' },
               ]}
             />
           </Space>
@@ -268,8 +301,8 @@ const TicketCheckPage = () => {
             >
               <Space direction="vertical">
                 <Radio value="all">Tất cả</Radio>
-                <Radio value="for-control">Đã đối soát</Radio>
-                <Radio value="not-control">Chưa đối soát</Radio>
+                <Radio value="Đã đối soát">Đã đối soát</Radio>
+                <Radio value="Chưa đối soát">Chưa đối soát</Radio>
               </Space>
             </Radio.Group>
           </li>

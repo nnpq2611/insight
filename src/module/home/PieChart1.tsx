@@ -4,7 +4,7 @@ import ReactApexChart from "react-apexcharts";
 import "./PieChart.css"
 
 const PieChart1 = () => {
-  const series = [44, 55];
+  const series = [0, 0];
   const options : ApexOptions = {
     chart: {
       width: 380,
@@ -13,10 +13,10 @@ const PieChart1 = () => {
     labels: ["Vé đã sử dụng", "Vé chưa sử dụng"],
     responsive: [
       {
-        breakpoint: 1480,
+        breakpoint: 500,
         options: {
           chart: {
-            width: 200,
+            width: 500,
           },
           legend: {
             position: "bottom",

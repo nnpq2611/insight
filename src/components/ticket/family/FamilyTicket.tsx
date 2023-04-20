@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { ref, get } from "firebase/database";
-import './FamilyTicket.css'
+import './Family.css'
 import { Pagination } from "antd";
-import database from "../../../firebase/firebase";
 
 interface goi_gia_dinh {
   id: number;
@@ -62,7 +60,7 @@ const FamilyTicket: React.FC<{danh_sach_ve_show: goi_gia_dinh[];
 
   return (
     <div>
-      <div className="bang2-family">
+      <div className="bang1-family">
       <table className="table">
         <thead>
           <tr>{ticket_list.map(renderHead)}</tr>

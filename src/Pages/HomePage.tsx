@@ -13,10 +13,10 @@ const HomePage = () => {
         <ul>
           <li> <h1>Thống kê</h1> </li>
           <li> <h5>Doanh thu</h5> </li>
-          {/* <li> <DatePickerCustom/> </li>           */}
-          <li> <AreaChart /> </li>
-          <li> <p>Tổng doanh thu theo tuần:</p> </li>
           <li> <DatePickerCustom/> </li> 
+          <br/><br/>     
+          <li> <AreaChart /> </li>
+          <li> <p>Tổng doanh thu theo tuần:</p> </li> 
           <li> <PieChart1/> </li>   
           <li> <PieChart2/></li>     
         </ul>

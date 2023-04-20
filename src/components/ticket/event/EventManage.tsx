@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ref, get } from "firebase/database";
 import { Pagination } from "antd";
 import database from "../../../firebase/firebase";
-import "./EventManage.css";
+import "./Event.css";
 
 interface goi_su_kien {
   id: number;

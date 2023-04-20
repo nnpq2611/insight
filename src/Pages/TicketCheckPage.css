@@ -80,7 +80,8 @@
 
 .tickercheck-page .btn-control .ant-btn{
     border-color: #FF993C;
-    color: #FF993C;
+    background-color: #FF993C;
+    color: #ffff;
     font-weight: 500;
 }
 

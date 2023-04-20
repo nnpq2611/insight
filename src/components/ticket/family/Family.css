@@ -96,3 +96,47 @@
     text-align: left; 
     padding-left: 13px; 
 }
+
+/* Đang áp dụng */
+.bang1-family .apply{
+    color: #03AC00;  
+    outline-offset: -10px;
+    padding-bottom: 7px;
+    position: relative;
+}
+
+.bang1-family .apply:before {
+    border: 3px solid #03AC00;
+    border-radius: 5px;
+    top: 5px;
+    right: 0px;
+    bottom: 8px;
+    left: -10px;    
+    content: "\2022";
+    font-size: 20px;
+    position: absolute;
+    text-align: left; 
+    padding-left: 10px;
+}
+
+/* Tắt */
+.bang1-family .not-apply{
+    color: #FD5959;  
+    outline-offset: -15px;
+    padding-bottom: 7px;
+    position: relative;
+}
+
+.bang1-family .not-apply:before {
+    border: 3px solid #FD5959;
+    border-radius: 5px;
+    top: 5px;
+    right: 35px;
+    bottom: 8px;
+    left: 25px;    
+    content: "\2022";
+    font-size: 20px;
+    position: absolute;
+    text-align: left; 
+    padding-left: 10px;
+}

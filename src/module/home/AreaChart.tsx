@@ -7,7 +7,7 @@ const AreaChart = () => {
   const series = [
     {
       name: "series1",
-      data: [160, 240, 200, 260, 300, 280, 300],
+      data: [0,0,0,0,0,0,0],
     },
   ];
   const options: ApexOptions = {
@@ -20,18 +20,10 @@ const AreaChart = () => {
     },
     stroke: {
       curve: "smooth",
+      colors: ["rgba(255, 153, 60, 1)"],
     },
     xaxis: {
-      type: "datetime",
-      categories: [
-        "2023-09-19T00:00:00.000Z",
-        "2023-09-19T01:30:00.000Z",
-        "2023-09-19T02:30:00.000Z",
-        "2023-09-19T03:30:00.000Z",
-        "2023-09-19T04:30:00.000Z",
-        "2023-09-19T05:30:00.000Z",
-        "2023-09-19T06:30:00.000Z",
-      ],
+      categories: ["Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7", "CN"],
     },
     tooltip: {
       x: {
@@ -42,7 +34,6 @@ const AreaChart = () => {
 
   return (
     <div>
-      <DatePickerCustom/>
       <ReactApexChart
         options={options}
         series={series}

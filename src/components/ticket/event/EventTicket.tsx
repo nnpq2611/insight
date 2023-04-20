@@ -1,8 +1,6 @@
 import React, {useState} from 'react'
-import { ref, get } from "firebase/database";
 import { Pagination } from "antd";
-import database from "../../../firebase/firebase";
-import "./EventTicket.css";
+import "./Event.css";
 
 interface goi_su_kien {
   id: number;
@@ -22,7 +20,6 @@ const ticket_list = [
   "Loại vé",
   "Cổng Check-in",
   "",
-  
 ];
 
 const renderHead = (item: any, index: any) => <th key={index}>{item}</th>;
@@ -61,7 +58,7 @@ const EventTicket: React.FC<{danh_sach_ve_su_kien_show: goi_su_kien[]}> = ({danh
     setDataShow(danh_sach_ve_su_kien_show.slice(start, end));
   };
   return (
-    <div className='bang2-event'>
+    <div className='bang1-event'>
       <table className="table">
         <thead>
           <tr>{ticket_list.map(renderHead)}</tr>

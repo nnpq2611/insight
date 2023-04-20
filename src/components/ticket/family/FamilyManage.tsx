@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./FamilyManage.css";
+import "./Family.css";
 import { Pagination } from "antd";
-import database from "../../../firebase/firebase";
+
 
 interface goi_gia_dinh {
   id: number;

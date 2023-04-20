@@ -10,6 +10,7 @@ import type { CheckboxValueType } from 'antd/es/checkbox/Group';
 import { CSVLink } from "react-csv";
 import database from "../firebase/firebase";
 import { get, ref, set } from "firebase/database";
+// import { CheckboxChangeEvent } from "antd/es/checkbox";
 
 interface goi_gia_dinh {
   id: number;
@@ -32,7 +33,6 @@ interface goi_su_kien {
   Han_su_dung: string;
   Cong_check_in: string;
 }
-
 
 const ManagePage = () => {
   const [packed, setPacked] = useState(true);
@@ -105,6 +105,7 @@ const ManagePage = () => {
 
   }, []);
 
+  // TabsProps
   const handleChangePacked = () => {
     setPacked(!packed);
   };
@@ -128,6 +129,7 @@ const ManagePage = () => {
     setIsModalOpen(false);
   };
 
+  //Search
   const handleSearch = (value: string) => {
     setSearchInput(value);
     if (packed) {
@@ -149,7 +151,7 @@ const ManagePage = () => {
     }
   };
 
-
+  //Xuất file excel
   const handleDowload = () => {
     if (packed) {
       setCsvData(danh_sach_ve);
@@ -164,6 +166,7 @@ const ManagePage = () => {
 
   }
 
+  //Điều kiện lọc vé
   const handleFilter = () => {
     if (packed) {
       let filter = danh_sach_ve;
@@ -230,7 +233,8 @@ const ManagePage = () => {
     }
     setIsModalOpen(false);
   }
-
+  
+  //Lọc vé theo cổng check in
   const handleCongCheckIn = (value: CheckboxValueType[]) => {
     if (value.indexOf("all") !== -1 && value.length === 5) {
       setCongCheckIn(value.filter((item) => item !== "all"));
@@ -241,6 +245,7 @@ const ManagePage = () => {
     else setCongCheckIn(value);
   }
 
+  //Lấy ngày bắt đầu
   const handleGetStartDate: DatePickerProps['onChange'] = (date, dateString) => {
     // get full date
     if(date)
@@ -254,6 +259,7 @@ const ManagePage = () => {
     else setStartDate(undefined);
   };
 
+  //Lấy ngày kết thúc
   const handleGetEndDate: DatePickerProps['onChange'] = (date, dateString) => {
     // get full date
     if(date)
@@ -315,22 +321,22 @@ const ManagePage = () => {
       >
         <ul className="date-modal">
           <li>
-            <p>Từ ngày</p>
+            <h4>Từ ngày</h4>
             <DatePicker onChange={handleGetStartDate} format={dateFormatList} className="date-picker"/>
           </li>
           <li>
-            <p>Đến ngày</p>
+            <h4>Đến ngày</h4>
             <DatePicker onChange={handleGetEndDate} format={dateFormatList} className="date-picker"/>
           </li>
         </ul>
-        <p>Tình trạng sử dụng</p>
+        <h4>Tình trạng sử dụng</h4>
         <Radio.Group value={status} onChange={(e) => setStatus(e.target.value)}>
           <Radio value="all">Tất cả</Radio>
           <Radio value="Đã sử dụng">Đã sử dụng</Radio>
           <Radio value="Chưa sử dụng">Chưa sử dụng</Radio>
           <Radio value="Hết hạn">Hết hạn</Radio>
         </Radio.Group>
-        <p>Cổng Check - in</p>
+        <h4>Cổng Check - in</h4>
         <Checkbox.Group 
           style={{ width: "100%" }}
           value={congCheckIn}

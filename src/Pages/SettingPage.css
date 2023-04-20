@@ -43,31 +43,6 @@
     margin: 10px 10px;
 }
 
-/* Tabs: gói gia đình, gói sự kiện */
-.setting-page .table-page .ant-tabs-tab-active .ant-tabs-tab-btn {
-    color: #FF993C !important;
-    font-weight: 500;
-}
-
-.setting-page .table-page .ant-tabs-ink-bar{
-    background-color: #FF993C;
-}
-
-.setting-page .table-page .ant-tabs-tab:hover {
-    color: #FF993C;
-    font-weight: 500;
-}
-
-.setting-page .table-page .ant-tabs-tab-btn:active:active {
-    color: #FF993C;
-    font-weight: 500;
-}
-
-.setting-page .table-page .ant-tabs-tab {
-    color: #b1b1b1;
-    font-size: 14px;
-}
-
 /* Button: lọc vé, xuất file */
 .setting-page .feature{
     display: inline;
@@ -82,5 +57,110 @@
 
 .setting-page .feature .ant-btn:hover{
     box-shadow: #FF993C 0px 3px 10px 0px;
+}
+
+/*Thêm gói vé*/
+/*Tên gói vé*/
+.custom-modal .form-event{
+    display: block;
+    width: 450px;
+}
+
+/*Thời gian*/
+.custom-modal .date-modal1{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    padding-left: 0;
+}
+
+.date-modal1 .Date{
+    width: 120px;
+}
+
+.date-modal1 .Time{
+    width: 110px;
+}
+
+.date-modal1 .Time .ant-picker-suffix, .date-modal1 .Date .ant-picker-suffix{
+    color: #FF993C;
+}
+
+.date-modal1 .to-date .Time, .date-modal1 .since .Time, .date-modal1 .since .Time, .date-modal1 .to-date .Time{
+    display: inline-block;
+    width: 40%;
+}
+
+.date-modal1 .ant-picker{
+    margin-right: 10px ;
+}
+
+/*Gía vé áp dụng*/
+.custom-modal .form_fare{
+    width: 130px;
+}
+
+.custom-modal .form_ticket{
+    width: 70px;
+}
+
+.custom-modal .Gia-ve_ap-dung{
+    list-style: none;
+    justify-content: space-between;
+    padding-left: 0;
+}
+
+.custom-modal .Gia-ve_ap-dung .form_fare, .custom-modal .Gia-ve_ap-dung p, .custom-modal .Gia-ve_ap-dung .form_ticket{
+    display: inline-block;
+    margin-right: 8px;
+}
+
+/*Tình trạng*/
+.custom-modal .select-status1 .ant-select-arrow{
+    color: #FF993C;
+}
+
+/*Button*/
+.custom-modal .button-container{
+    display: flex;
+    justify-content: center;
+}
+
+.custom-modal .cancel-btn{
+    margin-top: 30px;
+    display: block;
+    border-color: #FF993C;
+    color: #FF993C;
+    font-weight: 500;
+    width: 100px;
+    margin-right: 20px;
+}
+
+.custom-modal .cancel-btn:hover{
+    box-shadow: #FF993C 0px 3px 10px 0px;
+}
+
+.custom-modal .cancel-btn:hover{
+    color: #FF993C;
+    border-color:  #FF993C;
+}
+
+.custom-modal .save-btn{
+    margin-top: 30px;
+    border-color: #FF993C;
+    background-color: #FF993C;
+    color: #ffff;
+    font-weight: 500;
+    width: 100px;
+}
+
+.custom-modal .save-btn:hover{
+    box-shadow: #FF993C 0px 3px 10px 0px;
+}
+
+.custom-modal .save-btn:hover{
+    background-color: #FF993C;
+    color: #ffff;
+    border-color:  #FF993C;
 }
 
