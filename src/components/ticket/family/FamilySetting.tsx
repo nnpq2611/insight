@@ -5,13 +5,19 @@ import {EditOutlined} from '@ant-design/icons';
 import { Button, Modal } from "antd";
 
 interface goi_gia_dinh {
-  id: number;
+  id: string;
   Ma_goi: string;
   Ten_goi_ve: string;
+  Booking_Code: string;
+  So_ve: string;
+  Tinh_trang_su_dung: string;
+  Ngay_su_dung: string;
   Ngay_xuat_ve: string;
   Thoi_gian_ap_dung: string;
   Han_su_dung: string;
   Thoi_gian_het_han: string;
+  Loai_ve: string;
+  a: string;
   Gia_ve_le: string;
   Gia_ve_combo: string;
   Tinh_trang: string;
