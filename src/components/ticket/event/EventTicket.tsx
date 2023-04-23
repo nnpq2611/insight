@@ -24,8 +24,17 @@ const ticket_list = [
 
 const renderHead = (item: any, index: any) => <th key={index}>{item}</th>;
 
-const renderBody = (item: any, index: any) => (
-  <tr key={index}>
+const renderBody = (item: any,
+  index: any,
+  setRowActive: any,
+  rowActivate: any) => (
+  <tr
+    key={index}
+    className={`row ${item.id === rowActivate ? "row-active" : ""}`}
+    onClick={() => {
+      setRowActive(item.id);
+    }}
+  >
     <td>{item.id}</td>
     <td>{item.So_ve}</td>
     <td>{item.Ten_su_kien}</td>
@@ -47,6 +56,7 @@ const renderBody = (item: any, index: any) => (
 
 const EventTicket: React.FC<{danh_sach_ve_su_kien_show: goi_su_kien[]}> = ({danh_sach_ve_su_kien_show})=> {
   const [dataShow, setDataShow] = useState<goi_su_kien[]>([]);
+  const [rowActive, setRowActive] = useState<number | null>(null);
 
   React.useEffect(() => {
     setDataShow(danh_sach_ve_su_kien_show.slice(0, 10));
@@ -63,7 +73,9 @@ const EventTicket: React.FC<{danh_sach_ve_su_kien_show: goi_su_kien[]}> = ({danh
         <thead>
           <tr>{ticket_list.map(renderHead)}</tr>
         </thead>
-        <tbody>{dataShow.map(renderBody)}</tbody>
+        <tbody>{dataShow.map((item) => {
+                return renderBody(item, item.id, setRowActive, rowActive);
+              })}</tbody>
       </table>
 
       <Pagination

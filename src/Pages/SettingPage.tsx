@@ -147,7 +147,7 @@ const SettingPage = () => {
       "Thoi_gian_het_han": `${timeEnd}`,
       "Loai_ve": "Vé cổng",
       "Cong_check_in": `Cổng ${Math.floor(Math.random() * (9 - 1) ) + 1}`,
-      "a": "Đã đối soát",
+      "a": "Chưa đối soát",
       "Gia_ve_le": `${gia_ve_le} VNĐ`,
       "Gia_ve_combo": `${gia_ve_combo} VNĐ/${so_luong_ve} vé`,
       "Tinh_trang": `${tinh_trang}`,

@@ -9,6 +9,20 @@
     background-color: #F7F8FB;
 }
 
+.bang1-event .table .row:hover {
+    background-color: #bbe7ee;
+    cursor: pointer;
+}
+
+.bang1-event .table .row-active {
+    background-color: #bbe7ee;
+}
+
+.bang1-event .table .row-active:nth-child(even) {
+    background-color: #bbe7ee;
+    height: 40px;
+}
+
 .bang1-event .table th {
     background-color: #F1F4F8;
     color: black;

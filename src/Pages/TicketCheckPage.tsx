@@ -31,7 +31,7 @@ interface goi_su_kien {
   a:string;
 }
 
-const TicketCheckPage = () => {
+const TicketCheckPage = (item:any) => {
   const [packed, setPacked] = useState(true);
   const [searchInput, setSearchInput] = useState("");
   const [danh_sach_ve, setGoigiadinh] = useState<goi_gia_dinh[]>([]);
@@ -43,6 +43,7 @@ const TicketCheckPage = () => {
   const [endDate, setEndDate] = useState<Date>();
   // const [su_kien, setSu_kien] = useState<string>("all");
   const dateFormatList = ['DD/MM/YYYY'];
+  const [sukien,setSukien] = useState("Tất cả");
 
   const [loading, setLoading] = useState(false);
 
@@ -160,18 +161,19 @@ const TicketCheckPage = () => {
     } 
     else {
       let filter = danh_sach_ve_su_kien;
-      // if (su_kien !== "all") {
-      //   filter = filter.filter((item) => {
-      //     if (su_kien === "Sự kiện 1") {
-      //       return item.Ten_su_kien === "Sự kiện 1";
-      //     }
-      //     if (su_kien === "Sự kiện 2") {
-      //       return item.Ten_su_kien === "Sự kiện 2";
-      //     }
-      //     if (su_kien === "Sự kiện 3") {
-      //       return item.Ten_su_kien === "Sự kiện 3";
-      //     }
-      // });
+      if (sukien !== "Tất cả") {
+        filter = filter.filter((item) => {
+          if (sukien === "Sự kiện 1") {
+            return item.Ten_su_kien === "Sự kiện 1";
+          }
+          if (sukien === "Sự kiện 2") {
+            return item.Ten_su_kien === "Sự kiện 2";
+          }
+          if (sukien === "Sự kiện 3") {
+            return item.Ten_su_kien === "Sự kiện 3";
+          }
+      });
+      }
       if (status !== "all") {
         filter = filter.filter((item) => {
           if (status === "Chưa đối soát") {
@@ -220,7 +222,7 @@ const TicketCheckPage = () => {
   };
 
   const handleChange = (value: string) => {
-    console.log(`selected ${value}`);
+    setSukien(value);
   };
 
   const handleGetStartDate: DatePickerProps['onChange'] = (date, dateString) => {
@@ -282,10 +284,12 @@ const TicketCheckPage = () => {
         {!packed && (
           <Space wrap>
             <Select
-              defaultValue="Sự kiện 1"
+              defaultValue="Tất cả"
               style={{ width: 300 }}
               onChange={handleChange}
+              value={sukien}
               options={[
+                { value: 'Tất cả', label: 'Tất cả' },
                 { value: 'Sự kiện 1', label: 'Sự kiện 1' },
                 { value: 'Sự kiện 2', label: 'Sự kiện 2' },
                 { value: 'Sự kiện 3', label: 'Sự kiện 3' },

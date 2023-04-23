@@ -10,6 +10,20 @@
     height: 40px;
 }
 
+.bang1-family .table .row:hover {
+    background-color:  #bbe7ee;
+    cursor: pointer;
+}
+
+.bang1-family .table .row-active {
+    background-color:  #bbe7ee;
+}
+
+.bang1-family .table .row-active:nth-child(even) {
+    background-color: #bbe7ee;
+    height: 40px;
+}
+
 .bang1-family .table th {
     background-color: #F1F4F8;
     color: black;
@@ -140,3 +154,4 @@
     text-align: left; 
     padding-left: 10px;
 }
+
