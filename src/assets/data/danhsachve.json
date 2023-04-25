@@ -21,8 +21,7 @@
                     "a": "Đã đối soát",
                     "Gia_ve_le": "90.000 VNĐ",
                     "Gia_ve_combo": "360.000 VNĐ/4 vé",
-                    "Tinh_trang":"Đang áp dụng",
-                    "b": "Cập nhật"
+                    "Tinh_trang":"Đang áp dụng"
                 },
                 {
                     "id": "2",
@@ -41,8 +40,7 @@
                     "a": "Chưa đối soát",
                     "Gia_ve_le": "90.000 VNĐ",
                     "Gia_ve_combo": "360.000 VNĐ/4 vé",
-                    "Tinh_trang":"Đang áp dụng",
-                    "b": "Cập nhật"
+                    "Tinh_trang":"Đang áp dụng"
                 },
                 {
                     "id": "3",
@@ -87,8 +85,7 @@
                         "a": "Đã đối soát",
                         "Gia_ve_le": "20.000 VNĐ",
                         "Gia_ve_combo": "80.000 VNĐ/4 vé",
-                        "Tinh_trang":"Đang áp dụng",
-                        "b":"Cập nhật"
+                        "Tinh_trang":"Đang áp dụng"
                     },
                     {
                         "id": "2",
@@ -108,8 +105,7 @@
                         "a": "Chưa đối soát",
                         "Gia_ve_le": "20.000 VNĐ",
                         "Gia_ve_combo": "80.000 VNĐ/4 vé",
-                        "Tinh_trang":"Tắt",
-                        "b":"Cập nhật"
+                        "Tinh_trang":"Tắt"
                     },
                     {
                         "id": "3",
@@ -129,8 +125,7 @@
                         "a": "Đã đối soát",
                         "Gia_ve_le": "20.000 VNĐ",
                         "Gia_ve_combo": "80.000 VNĐ/4 vé",
-                        "Tinh_trang":"Tắt",
-                        "b":"Cập nhật"
+                        "Tinh_trang":"Tắt"
                     }
                 ]
 

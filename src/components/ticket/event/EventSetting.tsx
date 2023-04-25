@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Event.css";
 import { Pagination } from "antd";
 import { EditOutlined } from "@ant-design/icons";
-import { Button, Modal } from "antd";
+import Update from '../../../module/update/Update';
 
 interface goi_su_kien {
   id: string;
@@ -21,7 +21,6 @@ interface goi_su_kien {
   Gia_ve_le: string;
   Gia_ve_combo: string;
   Tinh_trang: string;
-  b: string;
 }
 
 const ticket_list = [
@@ -55,10 +54,7 @@ const renderBody = (item: any, index: any) => (
       {item.Tinh_trang}
     </td>
     <td>
-      <Button className="EditOutlined">
-        <EditOutlined />
-        {item.b}
-      </Button>
+      <Update />
     </td>
   </tr>
 );

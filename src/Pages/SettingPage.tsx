@@ -1,11 +1,11 @@
-import React, { useState, Component } from "react";
+import React, { useState } from "react";
 import { SearchOutlined } from "@ant-design/icons";
 import "./SettingPage.css";
-import { Input, Tabs, Button, Modal, DatePicker, DatePickerProps, TimePicker, Checkbox, Space, Select } from "antd";
+import { Input, Tabs, Button, Modal, DatePicker, TimePicker, Checkbox, Space, Select } from "antd";
 // import type { CheckboxChangeEvent } from 'antd/es/checkbox';
 import type { TabsProps } from "antd";
-import type { SpaceSize } from "antd/es/space";
-import type { CheckboxValueType } from "antd/es/checkbox/Group";
+// import type { SpaceSize } from "antd/es/space";
+// import type { CheckboxValueType } from "antd/es/checkbox/Group";
 // import { Checkbox, Col, Row } from "antd";
 import { CSVLink } from "react-csv";
 import Family from "../components/ticket/family/FamilySetting";
@@ -13,7 +13,7 @@ import Event from "../components/ticket/event/EventSetting";
 import database from "../firebase/firebase";
 import { get, ref, set } from "firebase/database";
 import { v4 as uuidv4 } from 'uuid';
-import dayjs from 'dayjs';
+// import dayjs from 'dayjs';
 // import axios from 'axios';
 
 interface goi_gia_dinh {
@@ -33,7 +33,6 @@ interface goi_gia_dinh {
   Gia_ve_le: string;
   Gia_ve_combo: string;
   Tinh_trang: string;
-  b: string;
 }
 
 interface goi_su_kien {
@@ -54,7 +53,6 @@ interface goi_su_kien {
   Gia_ve_le: string;
   Gia_ve_combo: string;
   Tinh_trang: string;
-  b: string;
 }
 
 const SettingPage = () => {
@@ -150,8 +148,7 @@ const SettingPage = () => {
       "a": "Chưa đối soát",
       "Gia_ve_le": `${gia_ve_le} VNĐ`,
       "Gia_ve_combo": `${gia_ve_combo} VNĐ/${so_luong_ve} vé`,
-      "Tinh_trang": `${tinh_trang}`,
-      "b": "Cập nhật"
+      "Tinh_trang": `${tinh_trang}`
     };
 
     if (packed) {
