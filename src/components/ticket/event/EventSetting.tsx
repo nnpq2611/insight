@@ -35,33 +35,34 @@ const ticket_list = [
   " ",
 ];
 
-const renderHead = (item: any, index: any) => <th key={index}>{item}</th>;
 
-const renderBody = (item: any, index: any) => (
-  <tr key={index}>
-    <td>{item.id}</td>
-    <td>{item.Ma_goi}</td>
-    <td>{item.Ten_goi_ve}</td>
-    <td>
-      {item.Ngay_xuat_ve} <br /> {item.Thoi_gian_ap_dung}
-    </td>
-    <td>
-      {item.Han_su_dung} <br /> {item.Thoi_gian_het_han}
-    </td>
-    <td>{item.Gia_ve_le}</td>
-    <td>{item.Gia_ve_combo}</td>
-    <td className={item.Tinh_trang === "Đang áp dụng" ? "apply" : "not-apply"}>
-      {item.Tinh_trang}
-    </td>
-    <td>
-      <Update />
-    </td>
-  </tr>
-);
-
-const EventSetting: React.FC<{ danh_sach_ve_su_kien_show: goi_su_kien[] }> = ({
-  danh_sach_ve_su_kien_show,
+const EventSetting: React.FC<{ danh_sach_ve_su_kien_show: goi_su_kien[], updateVe: any }> = ({
+  danh_sach_ve_su_kien_show, updateVe
 }) => {
+
+  const renderHead = (item: any, index: any) => <th key={index}>{item}</th>;
+  const renderBody = (item: any, index: any) => (
+    <tr key={index}>
+      <td>{item.id}</td>
+      <td>{item.Ma_goi}</td>
+      <td>{item.Ten_goi_ve}</td>
+      <td>
+        {item.Ngay_xuat_ve} <br /> {item.Thoi_gian_ap_dung}
+      </td>
+      <td>
+        {item.Han_su_dung} <br /> {item.Thoi_gian_het_han}
+      </td>
+      <td>{item.Gia_ve_le}</td>
+      <td>{item.Gia_ve_combo}</td>
+      <td className={item.Tinh_trang === "Đang áp dụng" ? "apply" : "not-apply"}>
+        {item.Tinh_trang}
+      </td>
+      <td>
+        <Update packed={false} item={item} updateVe={updateVe}/>
+      </td>
+    </tr>
+  );
+
   const [dataShow, setDataShow] = useState<goi_su_kien[]>([]);
 
   React.useEffect(() => {
@@ -73,6 +74,9 @@ const EventSetting: React.FC<{ danh_sach_ve_su_kien_show: goi_su_kien[] }> = ({
     const end = start + 10;
     setDataShow(danh_sach_ve_su_kien_show.slice(start, end));
   };
+
+  
+
   return (
     <div className="bang1-event">
       <table className="table">

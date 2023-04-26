@@ -36,10 +36,10 @@ const HomePage = () => {
           let used: any = 0;
           let unused: any = 0;
           snapshot.val().forEach((item: any) => {
-            if (item.Tinh_trang_su_dung === "Đã sử dụng") {
+            if (item.Tinh_trang_su_dung === "Đã sử dụng" && item.Tinh_trang === "Đang áp dụng") {
               used++;
             }
-            if (item.Tinh_trang_su_dung === "Chưa sử dụng") {
+            if (item.Tinh_trang_su_dung === "Chưa sử dụng" && item.Tinh_trang === "Đang áp dụng") {
               unused++;
             }
           });
@@ -59,10 +59,10 @@ const HomePage = () => {
           let used: any = 0;
           let unused: any = 0;
           snapshot.val().forEach((item: any) => {
-            if (item.Tinh_trang_su_dung === "Đã sử dụng") {
+            if (item.Tinh_trang_su_dung === "Đã sử dụng" && item.Tinh_trang === "Đang áp dụng") {
               used++;
             }
-            if (item.Tinh_trang_su_dung === "Chưa sử dụng") {
+            if (item.Tinh_trang_su_dung === "Chưa sử dụng" && item.Tinh_trang === "Đang áp dụng") {
               unused++;
             }
           });
@@ -144,7 +144,7 @@ const HomePage = () => {
   const getDanhThuOfWeek = () => {
     let sum = 0;
     dataFamily.forEach((item: any) => {
-      item.Tinh_trang !== "Tắt" &&
+      item.Tinh_trang !== "Tắt" && item.Tinh_trang_su_dung === "Đã sử dụng" &&
         getDay(item.Ngay_xuat_ve).getTime() <=
           new Date(week.endDate).getTime() &&
         getDay(item.Ngay_xuat_ve).getTime() >=
@@ -154,7 +154,7 @@ const HomePage = () => {
           .replaceAll(".", ""));
     });
     dataEvent.forEach((item: any) => {
-      item.Tinh_trang !== "Tắt" &&
+      item.Tinh_trang !== "Tắt" && item.Tinh_trang_su_dung === "Đã sử dụng" &&
         getDay(item.Ngay_xuat_ve).getTime() <=
           new Date(week.endDate).getTime() &&
         getDay(item.Ngay_xuat_ve).getTime() >=
@@ -169,13 +169,13 @@ const HomePage = () => {
   const getDoanhThu = () => {
     let sum = 0;
     dataFamily.forEach((item: any) => {
-      item.Tinh_trang !== "Tắt" &&
+      item.Tinh_trang !== "Tắt" && item.Tinh_trang_su_dung === "Đã sử dụng" &&
         (sum += +item.Gia_ve_le.toString()
           .replaceAll(" VNĐ", "")
           .replaceAll(".", ""));
     });
     dataEvent.forEach((item: any) => {
-      item.Tinh_trang !== "Tắt" &&
+      item.Tinh_trang !== "Tắt" && item.Tinh_trang_su_dung === "Đã sử dụng" &&
         (sum += +item.Gia_ve_le.toString()
           .replaceAll(" VNĐ", "")
           .replaceAll(".", ""));
@@ -186,40 +186,30 @@ const HomePage = () => {
   return (
     <div className="home-page">
       <div className="chart">
-        <ul>
-          <li>
-            <h1>Thống kê</h1>
-          </li>
-          <li>
-            <h5>
-              Doanh thu:{" "}
-              {getDoanhThu().toLocaleString("it-IT", {
-                style: "currency",
-                currency: "VND",
-              })}
-            </h5>
-          </li>
-          <li>
-            <DatePickerCustom setWeek={setWeek} />
-          </li>
-          <br />
-          <br />
-          <li>
-            <AreaChart data={dataChart} />
-          </li>
-          <li>
-            <p>
-              Tổng doanh thu theo tuần:{" "}
-              {getDanhThuOfWeek().toLocaleString("it-IT", {
-                style: "currency",
-                currency: "VND",
-              })}
+        <h1>Thống kê</h1>
+        <h5>
+          Doanh thu:{" "}
+          {getDoanhThu().toLocaleString("it-IT", {
+            style: "currency",
+            currency: "VND",
+          })}
+        </h5>
+        <DatePickerCustom setWeek={setWeek} />
+        <br />
+        <br />
+        <AreaChart data={dataChart} />
+        <p>
+          Tổng doanh thu theo tuần:{" "}
+          {getDanhThuOfWeek().toLocaleString("it-IT", {
+            style: "currency",
+            currency: "VND",
+          })}
             </p>
-          </li>
-          <li>
+          <ul>
+          <li className="Piechart">
             <PieChart1 data={dataPie1} />
           </li>
-          <li>
+          <li className="PiechartEvent">
             <PieChart2 data={dataPie2}/>
           </li>
         </ul>

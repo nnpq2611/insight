@@ -1,6 +1,5 @@
 import React from 'react';
 import { DatePicker, Space } from 'antd';
-import type { DatePickerProps } from 'antd';
 import './DatePicker.css';
 import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
@@ -27,7 +26,7 @@ const DatePickerCustom:React.FC<{setWeek: any}> = ({setWeek}) => {
     return (
         <Space direction="vertical" size={12} className='date'>
 
-            <DatePicker onChange={onChange} defaultValue={dayjs()}  picker="date" format={'DD/MM/YYYY'} />
+            <DatePicker onChange={onChange} defaultValue={dayjs()}  picker="week" format={'DD/MM/YYYY'} />
             
         </Space>
     );

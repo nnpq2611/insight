@@ -11,16 +11,9 @@
 .home-page ul{
     list-style-type: none;
     padding: 0;
-    display: block; 
+    display: flex; 
 }
 
-.home-page li::before{
-    content: none;
-}
-
-.home-page li{
-    list-style-type: none;
-}
 
 .home-page .chart{
     border-radius: 20px;
@@ -31,4 +24,5 @@
     margin-left: 10px;
     width: 100%;
 }
+
 

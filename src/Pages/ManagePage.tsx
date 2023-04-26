@@ -21,6 +21,7 @@ interface goi_gia_dinh {
   Han_su_dung: string;
   Ngay_xuat_ve: string;
   Cong_check_in: string;
+  Tinh_trang: string;
 }
 
 interface goi_su_kien {
@@ -32,6 +33,7 @@ interface goi_su_kien {
   Ngay_su_dung: string;
   Han_su_dung: string;
   Cong_check_in: string;
+  Tinh_trang: string;
 }
 
 const ManagePage = () => {

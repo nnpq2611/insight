@@ -6,7 +6,7 @@ const AreaChart: React.FC<{ data: any }> = ({ data }) => {
   const series = [
     {
       name: "series1",
-      data: [...data],
+      data: [...data.slice(2), data[0]],
     },
   ];
   const options: ApexOptions = {
@@ -22,7 +22,7 @@ const AreaChart: React.FC<{ data: any }> = ({ data }) => {
       colors: ["rgba(255, 153, 60, 1)"],
     },
     xaxis: {
-      categories: ["Chủ nhật", "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7"],
+      categories: ["Chủ nhật", "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5","Thứ 6","Thứ 7"],
     },
     colors: ["rgba(250, 160, 95, 0.26)", "rgba(255, 255, 255, 0)"],
     tooltip: {

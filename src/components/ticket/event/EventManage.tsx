@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { ref, get } from "firebase/database";
 import { Pagination } from "antd";
-import database from "../../../firebase/firebase";
 import "./Event.css";
 
 interface goi_su_kien {
@@ -13,6 +11,7 @@ interface goi_su_kien {
   Ngay_su_dung: string;
   Han_su_dung: string;
   Cong_check_in: string;
+  Tinh_trang: string;
 }
 
 const ticket_list = [
@@ -44,8 +43,9 @@ const getCurrentDate = () => {
   return new Date(`${month}/${day}/${year}`);
 };
 
-const renderBody = (item: any, index: any) => (
-  <tr key={index}>
+const renderBody = (item: any, index: any) => {
+  const controlColumn = item.Tinh_trang === "Đang áp dụng" ?(
+    <tr key={index}>
     <td>{item.id}</td>
     <td>{item.Booking_Code}</td>
     <td>{item.So_ve}</td>
@@ -69,7 +69,12 @@ const renderBody = (item: any, index: any) => (
     <td>{item.Han_su_dung}</td>
     <td>{item.Cong_check_in}</td>
   </tr>
-);
+  ) :null;
+  return (
+    controlColumn
+  )
+}
+  
 
 const Event: React.FC<{ danh_sach_ve_su_kien_show: goi_su_kien[] }> = ({
   danh_sach_ve_su_kien_show,

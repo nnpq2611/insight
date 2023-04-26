@@ -7,16 +7,20 @@ const PieChart2: React.FC<{data: any}> = ({data}) => {
   const series = [...data];
   const options : ApexOptions = {
     chart: {
-      width: 380,
+      width: 400,
       type: "donut",
     },
     labels: ["Vé đã sử dụng", "Vé chưa sử dụng"],
+    colors: ["#FF8A48", "#4F75FF"],
+    legend: {
+      show: false,
+    },
     responsive: [
       {
-        breakpoint: 480,
+        breakpoint: 500,
         options: {
           chart: {
-            width: 200,
+            width: 500,
           },
           legend: {
             position: "bottom",
@@ -24,15 +28,29 @@ const PieChart2: React.FC<{data: any}> = ({data}) => {
         },
       },
     ],
+    fill: {
+      colors: ["#FF8A48", "#4F75FF"],
+    },
   };
   return (
     <div className="pie-chart">
-      <h5>Gói sự kiện</h5>
-      <ReactApexChart
-        options={options}
-        series={series}
-        type="donut"
-      />
+      <ul className="chart1">
+        <li>
+          <h5>Gói gia đình</h5>
+        </li>
+        <li>
+          <ReactApexChart
+            options={options}
+            series={series}
+            type="donut"
+          />
+        </li>
+      </ul>
+      <ul className="labels">
+        <li className="label-used">Vé đã sử dụng</li>
+        <br />
+        <li className="label-unused">Vé chưa sử dụng</li>
+      </ul>
     </div>
   );
 };

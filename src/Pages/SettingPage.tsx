@@ -2,19 +2,13 @@ import React, { useState } from "react";
 import { SearchOutlined } from "@ant-design/icons";
 import "./SettingPage.css";
 import { Input, Tabs, Button, Modal, DatePicker, TimePicker, Checkbox, Space, Select } from "antd";
-// import type { CheckboxChangeEvent } from 'antd/es/checkbox';
 import type { TabsProps } from "antd";
-// import type { SpaceSize } from "antd/es/space";
-// import type { CheckboxValueType } from "antd/es/checkbox/Group";
-// import { Checkbox, Col, Row } from "antd";
 import { CSVLink } from "react-csv";
 import Family from "../components/ticket/family/FamilySetting";
 import Event from "../components/ticket/event/EventSetting";
 import database from "../firebase/firebase";
 import { get, ref, set } from "firebase/database";
 import { v4 as uuidv4 } from 'uuid';
-// import dayjs from 'dayjs';
-// import axios from 'axios';
 
 interface goi_gia_dinh {
   id: string;
@@ -77,6 +71,7 @@ const SettingPage = () => {
   const starCountRefEvent = ref(database, "danh_sach_ve/goi_su_kien");
   const starCountRefFamily = ref(database, "danh_sach_ve/goi_gia_dinh");
   const dateFormatList = ['DD/MM/YYYY'];
+
 
   const [loading, setLoading] = useState(false);
 
@@ -149,7 +144,7 @@ const SettingPage = () => {
       "Gia_ve_le": `${gia_ve_le} VNĐ`,
       "Gia_ve_combo": `${gia_ve_combo} VNĐ/${so_luong_ve} vé`,
       "Tinh_trang": `${tinh_trang}`
-    };
+    };  
 
     if (packed) {
       setGoigiadinh([...danh_sach_ve, ve]);
@@ -228,6 +223,30 @@ const SettingPage = () => {
     setEndDate(dateString);
   };
 
+  const updateVe = (id: string, veNew: any) => {
+    if (packed) {
+      const newVe = danh_sach_ve.map((ve) => {
+        if (ve.id === id) {
+          return veNew;
+        }
+        return ve;
+      });
+      setGoigiadinh(newVe);
+      setGoigiadinhShow(newVe);
+      set(starCountRefFamily, newVe);
+    } else {
+      const newVe = danh_sach_ve_su_kien.map((ve) => {
+        if (ve.id === id) {
+          return veNew;
+        }
+        return ve;
+      });
+      setGoisuKien(newVe);
+      setGoisuKienShow(newVe);
+      set(starCountRefEvent, newVe);
+    }
+  }
+
   return (
     <div className="setting-page">
       <div className="table-page">
@@ -264,7 +283,7 @@ const SettingPage = () => {
 
           </div>
         </ul>
-        {packed ? <Family danh_sach_ve_show={danh_sach_ve_show} loading={loading} /> : <Event danh_sach_ve_su_kien_show={danh_sach_ve_su_kien_show} />}
+        {packed ? <Family danh_sach_ve_show={danh_sach_ve_show} loading={loading} updateVe={updateVe}/> : <Event danh_sach_ve_su_kien_show={danh_sach_ve_su_kien_show} updateVe={updateVe}/>}
       </div>
       <Modal
         title="Thêm gói vé"

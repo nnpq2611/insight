@@ -1,3 +1,22 @@
 .Update-btn .tabs{
     display: none;
 }
+
+.family-update{
+    width: 120px;
+}
+.goisukien{
+    list-style-type: none;
+    padding: 0;
+    display: flex; 
+}
+.goisukien .masukien{
+    margin-right: 20px;
+}
+.goisukien .masukien .event-update1{
+    width: 120px;
+}
+
+.goisukien .tensukien .event-update2{
+    width: 320px;
+}

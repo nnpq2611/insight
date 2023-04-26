@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
-import './Family.css'
-import { Pagination } from "antd";;
-import Update from '../../../module/update/Update';
+import React, { useState } from "react";
+import "./Family.css";
+import { Pagination } from "antd";
+import Update from "../../../module/update/Update";
 
 interface goi_gia_dinh {
   id: string;
@@ -20,7 +20,6 @@ interface goi_gia_dinh {
   Gia_ve_le: string;
   Gia_ve_combo: string;
   Tinh_trang: string;
-  
 }
 
 const ticket_list = [
@@ -36,36 +35,37 @@ const ticket_list = [
 ];
 
 
-const renderHead = (item: any, index: any) => <th key={index}>{item}</th>;
-
-const renderBody = (item: any, index: any) => (
-  <tr key={index}>
+const FamilySetting: React.FC<{
+  danh_sach_ve_show: goi_gia_dinh[];
+  loading: boolean;
+  updateVe: any;
+}> = ({ danh_sach_ve_show, loading, updateVe }) => {
+  
+  const renderHead = (item: any, index: any) => <th key={index}>{item}</th>;
+  const renderBody = (item: any, index: any) => (
+    <tr key={index}>
       <td>{item.id}</td>
       <td>{item.Ma_goi}</td>
       <td>{item.Ten_goi_ve}</td>
-      <td>{item.Ngay_xuat_ve} <br /> {item.Thoi_gian_ap_dung}</td>
-      <td>{item.Han_su_dung} <br/> {item.Thoi_gian_het_han}</td>
+      <td>
+        {item.Ngay_xuat_ve} <br /> {item.Thoi_gian_ap_dung}
+      </td>
+      <td>
+        {item.Han_su_dung} <br /> {item.Thoi_gian_het_han}
+      </td>
       <td>{item.Gia_ve_le}</td>
       <td>{item.Gia_ve_combo}</td>
-      <td 
-          className={
-          item.Tinh_trang === "Đang áp dụng" 
-          ? "apply" 
-          : "not-apply"
-      }
+      <td
+        className={item.Tinh_trang === "Đang áp dụng" ? "apply" : "not-apply"}
       >
-      {item.Tinh_trang}</td>
-      <td><Update/></td>
-  </tr>
-  
-);
+        {item.Tinh_trang}
+      </td>
+      <td>
+        <Update packed={true} item={item} updateVe={updateVe}/>
+      </td>
+    </tr>
+  );
 
-
-
-
-const FamilySetting: React.FC<{danh_sach_ve_show: goi_gia_dinh[];
-  loading: boolean;}> = ({ danh_sach_ve_show, loading}, item:any) => {
-    
   const [dataShow, setDataShow] = useState<goi_gia_dinh[]>([]);
 
   React.useEffect(() => {
@@ -78,18 +78,17 @@ const FamilySetting: React.FC<{danh_sach_ve_show: goi_gia_dinh[];
     setDataShow(danh_sach_ve_show.slice(start, end));
   };
   return (
-    <div className='bang1-family'>
+    <div className="bang1-family">
       <table className="table">
         <thead>
           <tr>{ticket_list.map(renderHead)}</tr>
         </thead>
-        {loading ?(
+        {loading ? (
           <tbody>
             <tr>
               <td colSpan={7} className="loading">
                 Loading...
               </td>
-              
             </tr>
           </tbody>
         ) : (
@@ -102,10 +101,8 @@ const FamilySetting: React.FC<{danh_sach_ve_show: goi_gia_dinh[];
         onChange={(page) => selectPage(page - 1)}
         className="pagination"
       />
-      
     </div>
-    
-  )
-}
+  );
+};
 
-export default FamilySetting
+export default FamilySetting;

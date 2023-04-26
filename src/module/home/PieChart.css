@@ -2,3 +2,35 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.pie-chart .labels {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.pie-chart .chart1{
+    display: inline; 
+    margin-left: 150px; 
+}
+
+.pie-chart .chart1 li h5{
+    margin-left: 110px;  
+}
+  
+.pie-chart .label-used:before {
+    color: #FF8A48;
+    content: "\2022";
+    font-size: 50px;
+    
+}
+.pie-chart .label-unused:before {
+    color: #4F75FF;
+    content: "\2022";
+    font-size: 50px;
+}
+
+.pie-chart .labels{
+    display: inline;
+    margin-left: 20px;
+}

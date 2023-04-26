@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Family.css";
 import { Pagination } from "antd";
+
 
 
 interface goi_gia_dinh {
@@ -11,6 +12,7 @@ interface goi_gia_dinh {
   Ngay_su_dung: string;
   Ngay_xuat_ve: string;
   Cong_check_in: string;
+  Tinh_trang: string;
 }
 
 const ticket_list = [
@@ -41,8 +43,9 @@ const getCurrentDate = () => {
   return new Date(`${month}/${day}/${year}`);
 };
 
-const renderBody = (item: any, index: any) => (
-  <tr key={index}>
+const renderBody = (item: any, index: any) => {
+  const controlColumn = item.Tinh_trang === "Đang áp dụng" ?(
+    <tr key={index}>
     <td>{item.id}</td>
     <td>{item.Booking_Code}</td>
     <td>{item.So_ve}</td>
@@ -62,17 +65,20 @@ const renderBody = (item: any, index: any) => (
         : "Chưa sử dụng"}
     </td>
     <td>{item.Ngay_su_dung}</td>
-    <td>{item.Ngay_xuat_ve}</td>
+    <td>{item.Han_su_dung}</td>
     <td>{item.Cong_check_in}</td>
   </tr>
-);
+  ) :null;
+  return (
+    controlColumn
+  )
+}
 
 const Family: React.FC<{
   danh_sach_ve_show: goi_gia_dinh[];
   loading: boolean;
 }> = ({ danh_sach_ve_show, loading }) => {
   const [dataShow, setDataShow] = useState<goi_gia_dinh[]>([]);
-
   React.useEffect(() => {
     setDataShow(danh_sach_ve_show.slice(0, 10));
   }, [danh_sach_ve_show]);
@@ -98,7 +104,9 @@ const Family: React.FC<{
             </tr>
           </tbody>
         ) : (
-          <tbody>{dataShow.map(renderBody)}</tbody>
+          <tbody>
+            {dataShow.map(renderBody)}
+          </tbody>
         )}
       </table>
 

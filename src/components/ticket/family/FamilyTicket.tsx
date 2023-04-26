@@ -9,6 +9,8 @@ interface goi_gia_dinh {
   Loai_ve: string;
   Cong_check_in: string;
   a: string;
+  Tinh_trang: string;
+  Tinh_trang_su_dung: string;
 }
 
 const ticket_list = [
@@ -26,35 +28,42 @@ const renderBody = (
   item: any,
   index: any,
   setRowActive: any,
-  rowActivate: any
-) => (
-  <tr
-    key={index}
-    className={`row ${item.id === rowActivate ? "row-active" : ""}`}
-    onClick={() => {
-      setRowActive(item.id);
-    }}
-  >
-    <td>{item.id}</td>
-    <td>{item.So_ve}</td>
-    <td>{item.Ngay_su_dung} </td>
-    <td>{item.Loai_ve}</td>
-    <td>{item.Cong_check_in}</td>
-    <td
-      className={item.a === "Đã đối soát" ? "control" : "not-control"}
-      onClick={() => {
-        item.a;
-      }}
-    >
-      {item.a}
-    </td>
-  </tr>
-);
+  rowActivate: any,
+  setIdVe: any
+) => {
+  const controlColumn =
+    item.Tinh_trang === "Đang áp dụng" ? (
+      <tr
+        key={index}
+        className={`row ${item.id === rowActivate ? "row-active" : ""}`}
+        onClick={() => {
+          setRowActive(item.id);
+          setIdVe(item.id);
+        }}
+      >
+        <td>{item.id}</td>
+        <td>{item.So_ve}</td>
+        <td>{item.Ngay_su_dung} </td>
+        <td>{item.Loai_ve}</td>
+        <td>{item.Cong_check_in}</td>
+        <td
+          className={item.a === "Đã đối soát" ? "control" : "not-control"}
+          onClick={() => {
+            item.a;
+          }}
+        >
+          {item.a}
+        </td>
+      </tr>
+    ) : null;
+  return controlColumn;
+};
 
 const FamilyTicket: React.FC<{
   danh_sach_ve_show: goi_gia_dinh[];
   loading: boolean;
-}> = ({ danh_sach_ve_show, loading }) => {
+  setIdVe: any;
+}> = ({ danh_sach_ve_show, loading, setIdVe }) => {
   const [dataShow, setDataShow] = useState<goi_gia_dinh[]>([]);
   const [rowActive, setRowActive] = useState<number | null>(null);
 
@@ -75,6 +84,7 @@ const FamilyTicket: React.FC<{
           <thead>
             <tr>{ticket_list.map(renderHead)}</tr>
           </thead>
+
           {loading ? (
             <tbody>
               <tr>
@@ -86,7 +96,13 @@ const FamilyTicket: React.FC<{
           ) : (
             <tbody>
               {dataShow.map((item) => {
-                return renderBody(item, item.id, setRowActive, rowActive);
+                return renderBody(
+                  item,
+                  item.id,
+                  setRowActive,
+                  rowActive,
+                  setIdVe
+                );
               })}
             </tbody>
           )}

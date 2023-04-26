@@ -7,6 +7,7 @@ import Family from "../components/ticket/family/FamilyTicket";
 import Event from "../components/ticket/event/EventTicket";
 import database from "../firebase/firebase";
 import { get, ref, set } from "firebase/database";
+import dayjs from 'dayjs';
 
 interface goi_gia_dinh {
   id: number;
@@ -17,6 +18,8 @@ interface goi_gia_dinh {
   Loai_ve: string;
   Cong_check_in: string;
   a: string;
+  Tinh_trang: string;
+  Tinh_trang_su_dung: string;
 }
 
 interface goi_su_kien {
@@ -29,6 +32,8 @@ interface goi_su_kien {
   Ten_loai_ve: string;
   Cong_check_in: string;
   a:string;
+  Tinh_trang: string;
+  Tinh_trang_su_dung: string;
 }
 
 const TicketCheckPage = (item:any) => {
@@ -41,11 +46,14 @@ const TicketCheckPage = (item:any) => {
   const [status, setStatus] = useState<string>("all");
   const [startDate, setStartDate] = useState<Date>();
   const [endDate, setEndDate] = useState<Date>();
-  // const [su_kien, setSu_kien] = useState<string>("all");
   const dateFormatList = ['DD/MM/YYYY'];
   const [sukien,setSukien] = useState("Tất cả");
-
+  const starCountRefEvent = ref(database, "danh_sach_ve/goi_su_kien");
+  const starCountRefFamily = ref(database, "danh_sach_ve/goi_gia_dinh");
+  
   const [loading, setLoading] = useState(false);
+
+  const [idVe, setIdVe] = useState(0);
 
   const converDate = (dateString: string) => {
     const dateParts = dateString.split("/");
@@ -58,7 +66,6 @@ const TicketCheckPage = (item:any) => {
   React.useEffect(() => {
     // get data goi gia dinh from firebase
     setLoading(true);
-    const starCountRefFamily = ref(database, "danh_sach_ve/goi_gia_dinh");
     get(starCountRefFamily)
       .then((snapshot: any) => {
         if (snapshot.exists()) {
@@ -76,7 +83,6 @@ const TicketCheckPage = (item:any) => {
       });
 
     // get data goi su kien from firebase
-    const starCountRefEvent = ref(database, "danh_sach_ve/goi_su_kien");
     get(starCountRefEvent)
       .then((snapshot: any) => {
         if (snapshot.exists()) {
@@ -106,6 +112,36 @@ const TicketCheckPage = (item:any) => {
     },
   ];
 
+  const handleUpdate = () => {
+    if(packed){
+      // const updateData = ref(database, "danh_sach_ve/goi_gia_dinh");
+      // set(updateData, danh_sach_ve);
+      // console.log(danh_sach_ve.filter((item) => item.id === idVe)[0]);
+      setGoigiadinhShow(danh_sach_ve.map((item) => {
+        if(item.id === idVe){
+          item.a = "Đã đối soát";
+          item.Ngay_su_dung = dayjs().format("DD/MM/YYYY").toString();
+          item.Tinh_trang_su_dung = "Đã sử dụng";
+        }
+        return item;
+      }));
+      setGoigiadinh([...danh_sach_ve_show]);   
+      set(starCountRefFamily, danh_sach_ve);
+    }
+    else{
+      setGoisuKienShow(danh_sach_ve_su_kien.map((item) => {
+        if(item.id === idVe){
+          item.a = "Đã đối soát";
+          item.Ngay_su_dung = dayjs().format("DD/MM/YYYY").toString();
+          item.Tinh_trang_su_dung = "Đã sử dụng";
+        }
+        return item;
+      }));
+      setGoisuKien([...danh_sach_ve_su_kien_show]);
+      set(starCountRefEvent, danh_sach_ve_su_kien);
+    }
+    
+  }
   const handleFilter = () => {
     if (packed) {
       let filter = danh_sach_ve;
@@ -273,10 +309,10 @@ const TicketCheckPage = (item:any) => {
             />
           </li>
           <li className="btn-control">
-            <Button>Chốt đối soát</Button>
+            <Button onClick={handleUpdate}>Chốt đối soát</Button>
           </li>
 
-          {packed ? <Family danh_sach_ve_show={danh_sach_ve_show} loading={loading} /> : <Event danh_sach_ve_su_kien_show={danh_sach_ve_su_kien_show}/>}
+          {packed ? <Family danh_sach_ve_show={danh_sach_ve_show} loading={loading} setIdVe={setIdVe} /> : <Event danh_sach_ve_su_kien_show={danh_sach_ve_su_kien_show} setIdVe={setIdVe}/>}
         </ul>
       </div>
       <div className="body-loc_ve">
